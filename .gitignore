@@ -16,4 +16,7 @@ RemoteSystemsTempFiles
 *.class
 Java_Ejb
 build
+Temp
+.svn
+
 

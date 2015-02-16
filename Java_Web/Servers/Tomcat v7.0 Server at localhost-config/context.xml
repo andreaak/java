@@ -29,7 +29,16 @@
     <!--
     <Valve className="org.apache.catalina.valves.CometConnectionManagerValve" />
     -->
-  	<Resource name="jdbc/Library" auth="Container" type="javax.sql.DataSource"
+  	<!-- Resource name="jdbc/Library" auth="Container" type="javax.sql.DataSource"
+               maxActive="100" maxIdle="30" maxWait="10000"
+               username="root" password="root" driverClassName="com.mysql.jdbc.Driver"
+               url="jdbc:mysql://localhost:3306/library"/-->
+    <Resource name="jdbc/Library" auth="Container" type="javax.sql.DataSource"
                maxActive="100" maxIdle="30" maxWait="10000" driverClassName="org.sqlite.JDBC"
-               url="jdbc:sqlite:D:\Prj\Java\Java_Web\CityManagerWeb\WebContent\data.db"/>
+               url="jdbc:sqlite:E:\Prog\Java\Java_Web\CityManagerWeb\WebContent\data.db"/>     
+    <Resource name="jdbc/Library1" auth="Container" type="javax.sql.DataSource"
+               maxActive="100" maxIdle="30" maxWait="10000" 
+               username="root" password="root" driverClassName="com.mysql.jdbc.Driver"
+               url="jdbc:mysql://localhost:3306/library"/>  
+               
 </Context>

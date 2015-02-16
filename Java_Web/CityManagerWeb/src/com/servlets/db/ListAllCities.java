@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.servlets.contextListener.DBManagerSetup;
 import com.servlets.db.helpers.DBWorldQueries;
 import com.servlets.models.DBManager;
 import com.servlets.models.SQLiteConnectionBehavior;
@@ -36,20 +37,9 @@ public class ListAllCities extends HttpServlet {
 		//generate the output in a StringBuilder
 		StringBuilder sb = new StringBuilder("<html><body>");
 		
-		//get db con info from context init params
-//		String uid = getServletContext().getInitParameter("dbuserid");
-//		String pwd = getServletContext().getInitParameter("dbuserpwd");
-//		String cat = getServletContext().getInitParameter("dbinitcat");
-
-		//set the scb for mySQL
-		String path = this.getServletContext().getRealPath("data.db");
-
-		ServerConnectionBehavior scb = new SQLiteConnectionBehavior(path);
-		System.out.println(scb.getConnectionDetails());
-		System.out.println(scb.getConnectionURL());
-		
-		//create the manager
-		DBManager dbm = new DBManager(scb);
+		DBManager dbm = (DBManager)this.getServletContext().getAttribute(DBManagerSetup.ATTRIBUTE_NAME);
+		System.out.println(dbm.getTablesSchemaQuery());
+		System.out.println(dbm.getConnectionURL());
 		
 		try
 		{

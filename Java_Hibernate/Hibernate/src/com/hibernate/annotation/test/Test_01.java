@@ -3,20 +3,20 @@ package com.hibernate.annotation.test;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.hibernate.annotation.HibernateUtils;
 import com.hibernate.annotation.dto.UserDetails01;
 
+
+@RunWith(JUnit4.class)
 public class Test_01 {
 
 	private static Logger logger = LoggerFactory.getLogger(Test_01.class);
 
-	public static void main(String[] args) {
-		new Test_01().test();
-	}
-	
 	@Test
 	public void test() {
 		UserDetails01 user1 = new UserDetails01();

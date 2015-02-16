@@ -9,6 +9,10 @@
     </head>
 
     <body>
+        <%if (request.getParameter("session")!=null && request.getParameter("session").equals("0")) {
+            session.invalidate();
+            request.getSession(true);
+        } %>
         <div class="main">
 
             <div class="content">

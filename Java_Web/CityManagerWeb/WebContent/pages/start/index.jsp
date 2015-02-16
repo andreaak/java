@@ -9,7 +9,6 @@
 </head>
 <body>
 	<!-- include using a directive -->
-	<%-- Comments --%>
 	<%@ include file="header.jsp" %>
 	<table style="width:100%;">
 		<tr>

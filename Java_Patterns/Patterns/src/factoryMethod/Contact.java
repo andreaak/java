@@ -2,13 +2,11 @@ package factoryMethod;
 
 import java.awt.GridLayout;
 import java.io.Serializable;
-
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-@SuppressWarnings("serial")
 public class Contact implements Editable, Serializable {
     private String name;
     private String relationship;

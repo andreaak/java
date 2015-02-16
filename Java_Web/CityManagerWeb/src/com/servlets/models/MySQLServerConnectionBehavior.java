@@ -35,8 +35,7 @@ public class MySQLServerConnectionBehavior
 
 	@Override
 	public String getConnectionURL() {
-		return String.format("jdbc:mysql://localhost/%s"
-				+ "?user=%s&password=%s"
+		return String.format("jdbc:mysql://localhost/%s?user=%s&password=%s"
 				, getCatalog()
 				, getUserID()
 				, getPassword());

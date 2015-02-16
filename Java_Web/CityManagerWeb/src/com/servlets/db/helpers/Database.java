@@ -25,11 +25,9 @@ public class Database {
         try {
             ic = new InitialContext();
             //ds = (DataSource) ic.lookup("jdbc/Library");//glassfish
-            ds = (DataSource) ic.lookup("java:comp/env/jdbc/Library");//tomcat
-            //if (conn==null) 
-            {
-                conn = ds.getConnection();
-            }
+            //ds = (DataSource) ic.lookup("java:comp/env/jdbc/Library");//tomcat SQLite
+            ds = (DataSource) ic.lookup("java:comp/env/jdbc/Library1");//tomcat MySQL
+            conn = ds.getConnection();
         } catch (SQLException ex) {
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
         } catch (NamingException ex) {
@@ -73,8 +71,6 @@ public class Database {
 		String sTempDb = "D:\\Prj\\Java_Web\\CityManagerWeb\\WebContent\\data.db";
 		String sJdbc = "jdbc:sqlite";
 		String sDbUrl = sJdbc + ":" + sTempDb;
-		// which will produce a legitimate Url for SqlLite JDBC :
-		// jdbc:sqlite:data.db
 		int iTimeout = 30;
 		String dropTable = "DROP TABLE city_clone";
 		String sMakeTable = "CREATE TABLE city_clone (id numeric, name text, countrycode text)";

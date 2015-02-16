@@ -5,16 +5,15 @@ package com.hibernate.annotation.test;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 import com.hibernate.annotation.HibernateUtils;
 import com.hibernate.annotation.dto.UserDetails02Annotation;
 
+@RunWith(JUnit4.class)
 public class Test_04_RetrieveItem {
 
-	public static void main(String[] args) {
-		new Test_04_RetrieveItem().test();
-	}
-	
 	@Test
 	public void test() {
 		UserDetails02Annotation user = new UserDetails02Annotation();

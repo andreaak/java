@@ -2,7 +2,6 @@ package com.servlets.contextListener;
 import java.sql.Connection;
 
 import javax.naming.InitialContext;
-import javax.naming.NamingException;
 import javax.servlet.*;
 import javax.servlet.annotation.WebListener;
 import javax.sql.DataSource;
@@ -49,7 +48,7 @@ public class DBManagerSetup implements ServletContextListener //add definition i
 				String path1 = null;
 				try {
 					InitialContext ic = new InitialContext();
-					DataSource ds = (DataSource) ic.lookup("java:comp/env/jdbc/Library");//tomcat
+					DataSource ds = (DataSource) ic.lookup("java:comp/env/jdbc/Library1");//tomcat
 					//DataSource ds = (DataSource) ic.lookup("jdbc/Library");//glassfish
 		            Connection conn = ds.getConnection();
 		            path1 = conn.getMetaData().getURL();

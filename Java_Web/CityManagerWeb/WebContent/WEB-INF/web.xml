@@ -45,11 +45,11 @@
   
   <context-param>
   	<param-name>dbType</param-name>
-  	<param-value>SQLite</param-value> <!-- SQLite MySQL -->
+  	<param-value>MySQL</param-value> <!-- SQLite MySQL -->
   </context-param>  
   <context-param>
     <param-name>dbURL</param-name>
-    <param-value>jdbc:mysql://localhost/world</param-value>
+    <param-value>jdbc:mysql://localhost:3306/world</param-value>
   </context-param>
   <context-param>
     <param-name>dbuserid</param-name>
@@ -61,7 +61,7 @@
   </context-param>
   <context-param>
     <param-name>dbinitcat</param-name>
-    <param-value>library</param-value>
+    <param-value>world</param-value>
   </context-param>
   <context-param>
     <param-name>copyright</param-name>
@@ -71,7 +71,6 @@
     <param-name>weblink</param-name>
     <param-value>http://www.infiniteskills.com</param-value>
   </context-param>
-  
   <session-config>
     <session-timeout>20</session-timeout>
     <cookie-config>
@@ -79,12 +78,20 @@
     </cookie-config>
     <tracking-mode>COOKIE</tracking-mode>
   </session-config>
+  
   <jsp-config>
   	<jsp-property-group>
   	<url-pattern>/pages/error/listCities.jsp</url-pattern>
   	<!-- NO SCRIPTING IN GROUP -->
   	<scripting-invalid>true</scripting-invalid>
   	</jsp-property-group>
+  	<jsp-property-group>
+  	  <display-name>header_and_footer</display-name> 
+      <url-pattern>/library/pages/*</url-pattern> 
+      <page-encoding>UTF-8</page-encoding> 
+      <include-prelude>/WEB-INF/jspf/header.jspf</include-prelude> 
+      <include-coda>/WEB-INF/jspf/footer.jspf</include-coda> 
+      </jsp-property-group>
   </jsp-config>
   <error-page>
     <error-code>404</error-code>
@@ -135,15 +142,15 @@
   </jsp-config-->
   
   <filter>
-  	<filter-name>AuthorizationFilter2</filter-name>
+  	<filter-name>AuthorizationFilter</filter-name>
   	<filter-class>com.servlets.filters.AuthorizationFilter2</filter-class>
   </filter>
   <filter-mapping>
-  	<filter-name>AuthorizationFilter2</filter-name>
+  	<filter-name>AuthorizationFilter</filter-name>
   	<url-pattern>/pages/filters/protected2/*</url-pattern>
   </filter-mapping>
   
- 
+  
   <security-constraint>
   	<web-resource-collection>
   		<web-resource-name>AccessWorldData</web-resource-name>
@@ -184,4 +191,7 @@
   		<form-error-page>/pages/auth/rolespecific/loginError.jsp</form-error-page>
   	</form-login-config>
   </login-config>
+  
+
+
 </web-app>

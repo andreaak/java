@@ -5,16 +5,15 @@ import java.util.Date;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 import com.hibernate.annotation.HibernateUtils;
 import com.hibernate.annotation.dto.UserDetails02Annotation;
 
-public class Test_07_UpdateAftersave {
+@RunWith(JUnit4.class)
+public class Test_07_UpdateAfterSave {
 
-	public static void main(String[] args) {
-		new Test_07_UpdateAftersave().test();
-	}
-	
 	@Test
 	public void test() {
 		UserDetails02Annotation user = new UserDetails02Annotation();
@@ -39,9 +38,9 @@ public class Test_07_UpdateAftersave {
 		sessionFactory = HibernateUtils.getSessionFactory();
 		session = sessionFactory.openSession();
 		user = (UserDetails02Annotation)session.get(UserDetails02Annotation.class, 6);
-		System.out.println("User Name " + user.getUserName());
-		System.out.println("User Adress " + user.getAddress());
-		System.out.println("User SureName " + user.getSureName());
+		System.out.println("User Name: " + user.getUserName());
+		System.out.println("User Adress: " + user.getAddress());
+		System.out.println("User SureName: " + user.getSureName());
 		session.close();
 	}
 }

@@ -40,7 +40,7 @@
         <property name="connection.pool_size">1</property>
 
         <!-- SQL dialect -->
-        <property name="dialect">com.hibernate.dialect.SQLiteDialect</property>
+        <property name="dialect">com.hibernate._00_dialect.SQLiteDialect</property>
 
         <!-- Disable the second-level cache  -->
         <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
@@ -54,10 +54,10 @@
         <!-- Names the annotated entity class -->
         <mapping class="com.hibernate.annotation.dto.UserDetails01"/>
         <mapping class="com.hibernate.annotation.dto.UserDetails02Annotation"/>
-        <mapping class="com.hibernate.annotation.dto.queries.UserDetails"/>
-		<mapping class="com.hibernate.annotation.dto.criteria.UserDetailsCriteria"/>
-        <mapping class="com.hibernate.annotation.dto.primarykeys.UserDetails05PrimaryKeys"/>
-		<mapping class="com.hibernate.annotation.dto.embedded.UserDetails06Embedded"/>
+        <mapping class="com.hibernate.annotation.dto._01_primarykeys.UserDetailsPK"/>
+		<mapping class="com.hibernate.annotation.dto._02_embedded.UserDetailsEmb"/>
+        <mapping class="com.hibernate.annotation.dto._06_queries.UserDetails"/>
+		<mapping class="com.hibernate.annotation.dto._07_criteria.UserDetailsCriteria"/>
     </session-factory>
 
 </hibernate-configuration>
