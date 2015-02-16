@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/GeneTools_1.0.0.2.jar" id="GeneTools" version="1.0.0.2" os="win32">
+      <category name="Gene Tools"/>
+   </feature>
+   <category-def name="Gene Tools" label="Gene Tools">
+      <description>
+         Soft Genetics Service Development tools,
+      </description>
+   </category-def>
+</site>

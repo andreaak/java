@@ -1,0 +1,1 @@
+<div class="banner"><img src="${pageContext.request.contextPath}/images/banner1.png" /></div>

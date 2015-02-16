@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <!-- Commands -->
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Sample Category"
+            id="gene.toolkit.commands.category">
+      </category>
+      <command
+            name="Sample Command"
+            categoryId="gene.toolkit.commands.category"
+            id="gene.toolkit.commands.sampleCommand">
+      </command>
+      <!-- Hibernate generation -->
+      <command
+            name="Generate Hibernate Entities"
+            categoryId="gene.toolkit.commands.category"
+            id="gene.toolkit.commands.generatehibernatecommand">
+      </command>
+      <!-- WSDL generation -->
+      <command
+            name="Common module"
+            categoryId="gene.toolkit.commands.category"
+            id="gene.toolkit.commands.generatewsgcm">
+      </command>
+      <command
+            name="Soft Molecular"
+            categoryId="gene.toolkit.commands.category"
+            id="gene.toolkit.commands.generatewsmol">
+      </command>
+      <command
+            name="Soft BioChemistry"
+            categoryId="gene.toolkit.commands.category"
+            id="gene.toolkit.commands.generatewsbio">
+      </command>
+      <command
+            name="Soft Cytogenetics"
+            categoryId="gene.toolkit.commands.category"
+            id="gene.toolkit.commands.generatewsctg">
+      </command>
+      <command
+            name="Soft FlowCytometry"
+            categoryId="gene.toolkit.commands.category"
+            id="gene.toolkit.commands.generatewsflw">
+      </command>
+      <command
+            name="Soft HLA"
+            categoryId="gene.toolkit.commands.category"
+            id="gene.toolkit.commands.generatewshla">
+      </command>
+       <command
+            name="Soft PreAnalytical"
+            categoryId="gene.toolkit.commands.category"
+            id="gene.toolkit.commands.generatewsacc">
+      </command>
+      <command
+            name="Soft PathDx"
+            categoryId="gene.toolkit.commands.category"
+            id="gene.toolkit.commands.generatewsdxp">
+      </command>
+      <command
+            name="Soft Micro"
+            categoryId="gene.toolkit.commands.category"
+            id="gene.toolkit.commands.generatewsmic">
+      </command>
+      <command
+            name="Soft Lab"
+            categoryId="gene.toolkit.commands.category"
+            id="gene.toolkit.commands.generatewslab">
+      </command>
+      
+      <command
+            name="Redeploy application"
+            categoryId="gene.toolkit.commands.category"
+            id="gene.toolkit.commands.redeploy">
+      </command>
+      <!-- Full Rebuild -->
+      <command
+            name="Full rebuild"
+            categoryId="gene.toolkit.commands.category"
+            id="gene.toolkit.commands.rebuildapp">
+      </command>
+      <!-- Validate env -->
+      <command
+            name="Validate Environment"
+            categoryId="gene.toolkit.commands.category"
+            id="gene.toolkit.commands.validateenv">
+      </command>
+      <!-- Projects generation -->
+      <command
+            name="Generate Projects"
+            categoryId="gene.toolkit.commands.category"
+            id="gene.toolkit.commands.generateprojects">
+      </command>
+      <!-- Exploded deployment -->
+      <command
+            name="Exploded deployment"
+            categoryId="gene.toolkit.commands.category"
+            id="gene.toolkit.commands.fixdeployment">
+            
+      </command>   
+
+      <!-- Pack>
+      <command
+            name="Common module"
+            categoryId="gene.toolkit.commands.category"
+            id="gene.toolkit.commands.packwsgcm">
+      </command>
+      
+      <command
+            name="Soft Molecular"
+            categoryId="gene.toolkit.commands.category"
+            id="gene.toolkit.commands.packwsmol">
+      </command>
+      
+      <command
+            name="Soft BioChemistry"
+            categoryId="gene.toolkit.commands.category"
+            id="gene.toolkit.commands.packwsbio">
+      </command>
+      
+      <command
+            name="Soft Cytogenetics"
+            categoryId="gene.toolkit.commands.category"
+            id="gene.toolkit.commands.packwsctg">
+      </command>
+      
+      <command
+            name="Soft FlowCytometry"
+            categoryId="gene.toolkit.commands.category"
+            id="gene.toolkit.commands.packwsflw">
+      </command>
+      
+      <command
+            name="Soft HLA"
+            categoryId="gene.toolkit.commands.category"
+            id="gene.toolkit.commands.packwshla">
+      </command>
+      
+      <command
+            name="Soft PreAnalytical"
+            categoryId="gene.toolkit.commands.category"
+            id="gene.toolkit.commands.packwsacc">
+      </command>
+      
+      <command
+            name="Soft PathDx"
+            categoryId="gene.toolkit.commands.category"
+            id="gene.toolkit.commands.packwsdxp">
+      </command>
+      
+     <command
+            name="Soft Micro"
+            categoryId="gene.toolkit.commands.category"
+            id="gene.toolkit.commands.packwsmic">
+      </command>
+ 
+     <command
+            name="Soft Lab"
+            categoryId="gene.toolkit.commands.category"
+            id="gene.toolkit.commands.packwslab5">
+      </command>
+      <command
+            name="Repack Web Archives"
+            categoryId="gene.toolkit.commands.category"
+            id="gene.toolkit.commands.repackwar">
+      </command-->      
+   </extension>
+   
+   <!-- Delegates -->
+   <!-- Full Rebuild -->
+   <extension point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+            delegate="gene.toolkit.fullbuild.FullBuildDelegate" 
+            id="gene.toolkit.fullbuild" 
+            modes="run" 
+            name="Full Build" 
+            public="false"> 
+      </launchConfigurationType>
+   </extension>
+   <!-- Hibernate generation -->
+   <extension point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+            delegate="gene.toolkit.generate.GenerateHibernateEntitiesDelegate" 
+            id="gene.toolkit.generate.hibernate" 
+            modes="run" 
+            name="Generate Hibernate Entities" 
+            public="false"> 
+      </launchConfigurationType>
+   </extension>
+   <!-- WSDL generation -->
+   <extension point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+            delegate="gene.toolkit.handlers.ws.GcmGenerateHandler" 
+            id="gene.toolkit.ws.gcm" 
+            modes="run" 
+            name="Generate Gcm Web Service Stub"  
+            public="false"> 
+      </launchConfigurationType>
+   </extension>
+   <extension point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+            delegate="gene.toolkit.handlers.ws.MolGenerateHandler" 
+            id="gene.toolkit.ws.mol" 
+            modes="run" 
+            name="Generate Mol Web Service Stub"  
+            public="false"> 
+      </launchConfigurationType>
+   </extension>
+   <extension point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+            delegate="gene.toolkit.handlers.ws.BioGenerateHandler" 
+            id="gene.toolkit.ws.bio" 
+            modes="run" 
+            name="Generate Bio Web Service Stub"  
+            public="false"> 
+      </launchConfigurationType>
+   </extension>
+   <extension point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+            delegate="gene.toolkit.handlers.ws.CtgGenerateHandler" 
+            id="gene.toolkit.ws.ctg" 
+            modes="run" 
+            name="Generate Ctg Web Service Stub"  
+            public="false"> 
+      </launchConfigurationType>
+   </extension>
+   <extension point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+            delegate="gene.toolkit.handlers.ws.FlwGenerateHandler" 
+            id="gene.toolkit.ws.flw" 
+            modes="run" 
+            name="Generate Web Service Stub"  
+            public="false"> 
+      </launchConfigurationType>
+   </extension>
+   <extension point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+            delegate="gene.toolkit.handlers.ws.DxpGenerateHandler" 
+            id="gene.toolkit.ws.dxp" 
+            modes="run" 
+            name="Generate Dxp Web Service Stub"  
+            public="false"> 
+      </launchConfigurationType>
+   </extension>
+   <extension point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+            delegate="gene.toolkit.handlers.ws.HlaGenerateHandler" 
+            id="gene.toolkit.ws.hla" 
+            modes="run" 
+            name="Generate Hla Web Service Stub"  
+            public="false"> 
+      </launchConfigurationType>
+   </extension>
+   <extension point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+            delegate="gene.toolkit.handlers.ws.AccGenerateHandler" 
+            id="gene.toolkit.ws.acc" 
+            modes="run" 
+            name="Generate Acc Web Service Stub"  
+            public="false"> 
+      </launchConfigurationType>
+   </extension>
+   <extension point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+            delegate="gene.toolkit.handlers.ws.MicGenerateHandler" 
+            id="gene.toolkit.ws.gmic" 
+            modes="run" 
+            name="Generate Mic Web Service Stub"  
+            public="false"> 
+      </launchConfigurationType>
+   </extension>
+   <extension point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+            delegate="gene.toolkit.handlers.ws.Lab5GenerateHandler" 
+            id="gene.toolkit.ws.glab" 
+            modes="run" 
+            name="Generate Lab5 Web Service Stub"  
+            public="false"> 
+      </launchConfigurationType>
+   </extension>
+   
+   <!-- Handlers -->
+   <extension point="org.eclipse.ui.handlers">
+      <!-- Hibernate generation -->
+      <handler
+            commandId="gene.toolkit.commands.generatehibernatecommand"
+            class="gene.toolkit.handlers.GenerateHibernateEntitiesHandler">
+      </handler>
+      <!-- WSDL generation -->
+      <handler
+      		commandId="gene.toolkit.commands.generatewsgcm"
+      		class="gene.toolkit.handlers.ws.GcmGenerateHandler">
+      </handler>
+      <handler
+      		commandId="gene.toolkit.commands.generatewsmol"
+      		class="gene.toolkit.handlers.ws.MolGenerateHandler">
+      </handler>
+      <handler
+      		commandId="gene.toolkit.commands.generatewsbio"
+      		class="gene.toolkit.handlers.ws.BioGenerateHandler">
+      </handler>
+      <handler
+      		commandId="gene.toolkit.commands.generatewshla"
+      		class="gene.toolkit.handlers.ws.HlaGenerateHandler">
+      </handler>
+      <handler
+      		commandId="gene.toolkit.commands.generatewsctg"
+      		class="gene.toolkit.handlers.ws.CtgGenerateHandler">
+      </handler>
+      <handler
+      		commandId="gene.toolkit.commands.generatewsflw"
+      		class="gene.toolkit.handlers.ws.FlwGenerateHandler">
+      </handler>
+      <handler
+      		commandId="gene.toolkit.commands.generatewsdxp"
+      		class="gene.toolkit.handlers.ws.DxpGenerateHandler">
+      </handler>
+      <handler
+      		commandId="gene.toolkit.commands.generatewsacc"
+      		class="gene.toolkit.handlers.ws.AccGenerateHandler">
+      </handler>
+      <handler
+      		commandId="gene.toolkit.commands.generatewsmic"
+      		class="gene.toolkit.handlers.ws.MicGenerateHandler">
+      </handler>
+      <handler
+      		commandId="gene.toolkit.commands.generatewslab"
+      		class="gene.toolkit.handlers.ws.Lab5GenerateHandler">
+      </handler>
+      <!-- Redeploy application -->
+      <handler
+            commandId="gene.toolkit.commands.redeploy"
+            class="gene.toolkit.handlers.RedeployHandler">
+      </handler>
+      <!-- Full Rebuild -->
+      <handler
+            commandId="gene.toolkit.commands.sampleCommand"
+            class="gene.toolkit.handlers.FullRebuildHandler">
+      </handler>
+      <handler
+            commandId="gene.toolkit.commands.rebuildapp"
+            class="gene.toolkit.handlers.FullRebuildHandler">
+      </handler>
+      <!-- Validate env -->
+      <handler
+            commandId="gene.toolkit.commands.validateenv"
+            class="gene.toolkit.handlers.ValidateEnvHandler">
+      </handler>
+      <!-- Projects generation -->
+      <handler
+            commandId="gene.toolkit.commands.generateprojects"
+            class="gene.toolkit.handlers.GenerateProjectsHandler">
+      </handler>
+      <!-- Exploded deployment -->
+      <handler
+            commandId="gene.toolkit.commands.fixdeployment"
+            class="gene.toolkit.handlers.FixDeployHandler">
+      </handler>
+   </extension>
+   
+   <extension point="org.eclipse.ui.bindings">
+      <key
+            commandId="gene.toolkit.commands.sampleCommand"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+6"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+   </extension>
+   
+   <extension point="org.eclipse.ui.menus">
+      <!--Main Button-->
+      <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar id="gene.toolkit.toolbars.sampleToolbar">
+            <command
+                  commandId="gene.toolkit.commands.sampleCommand"
+                  icon="icons/testtube.png"
+                  tooltip="Gene Tools"
+                  id="gene.toolkit.toolbars.sampleCommand"
+                  style="pulldown"
+                  >
+            </command>
+         </toolbar>
+      </menuContribution>
+      <!--Main Menu-->
+      <menuContribution locationURI="menu:gene.toolkit.toolbars.sampleCommand">
+            <command
+                  commandId="gene.toolkit.commands.generatehibernatecommand"
+                  icon="icons/database.png"
+                  tooltip="Generate Hibernate Entities"
+                  id="gene.toolkit.toolbars.generatehibernatecommand"
+                  >
+            </command>
+            <menu label="Generate Web Service stubs" id="gene.toolkit.genwsmenu" icon="icons/webservice.png">
+                <command commandId="gene.toolkit.commands.generatewsgcm" id="gene.toolkit.toolbars.generatewsgcm" icon="icons/gcm.png">
+                </command>
+                <separator name="additions" visible="false"></separator>
+                <command commandId="gene.toolkit.commands.generatewsmol" id="gene.toolkit.toolbars.generatewsmol" icon="icons/mol.ico">
+                </command>
+                <command commandId="gene.toolkit.commands.generatewsdxp" id="gene.toolkit.toolbars.generatewsdxp" icon="icons/dxp.gif">
+                </command>
+                <command commandId="gene.toolkit.commands.generatewsctg" id="gene.toolkit.toolbars.generatewsctg" icon="icons/ctg.gif">
+                </command>
+                <command commandId="gene.toolkit.commands.generatewshla" id="gene.toolkit.toolbars.generatewshla" icon="icons/hla.gif">
+                </command>
+                <command commandId="gene.toolkit.commands.generatewsbio" id="gene.toolkit.toolbars.generatewsbio" icon="icons/bio.ico">
+                </command>
+                <command commandId="gene.toolkit.commands.generatewsacc" id="gene.toolkit.toolbars.generatewsacc" icon="icons/acc.ico">
+                </command>
+                <command commandId="gene.toolkit.commands.generatewsflw" id="gene.toolkit.toolbars.generatewsflw" icon="icons/flw.ico">
+                </command>
+                <command commandId="gene.toolkit.commands.generatewsmic" id="gene.toolkit.toolbars.generatewsmic" icon="icons/flw.ico">
+                </command>
+                <command commandId="gene.toolkit.commands.generatewslab5" id="gene.toolkit.toolbars.generatewslab5" icon="icons/flw.ico">
+                </command>
+            </menu>
+            <command
+                  commandId="gene.toolkit.commands.redeploy"
+                  icon="icons/redeploy.png"
+                  tooltip="Redeploy application"
+                  id="gene.toolkit.toolbars.redeploy"/>
+            <command
+                  commandId="gene.toolkit.commands.rebuildapp"
+                  icon="icons/rebuild.png"
+                  tooltip="Rebuild/Repack/Redeploy application"
+                  id="gene.toolkit.toolbars.rebuildapp"/>
+             <menu label="Tools" id="gene.toolkit.gentoolsmenu" icon="icons/tools.png">
+				
+                <command commandId="gene.toolkit.commands.validateenv" id="gene.toolkit.toolbars.validateenv" icon="icons/env.png">
+                </command>
+                <command commandId="gene.toolkit.commands.generateprojects" id="gene.toolkit.toolbars.generateprojects" icon="icons/projects.png">
+                </command>
+                <command commandId="gene.toolkit.commands.fixdeployment" id="gene.toolkit.toolbars.fixdeploy" icon="icons/bug.png">
+                </command>
+                
+            </menu>
+      </menuContribution>
+    </extension>
+    <!--Preferences pages-->
+   <extension point="org.eclipse.ui.preferencePages">
+	  <page id="gene.toolkit.prefs.GeneToolkitPreferencesPage" class="gene.toolkit.prefs.GeneToolkitPreferencesPage" name="Gene Tools"/>
+	  <page id="gene.toolkit.prefs.JBossPreferencesPage" class="gene.toolkit.prefs.JBossPreferencesPage" name="JBoss" category="gene.toolkit.prefs.GeneToolkitPreferencesPage"/>
+	  <page id="gene.toolkit.prefs.AntTargetsPage" class="gene.toolkit.prefs.AntTargetsPreferencesPage" name="Ant Targets" category="gene.toolkit.prefs.GeneToolkitPreferencesPage"/>
+	  	  	  
+	  <page id="gene.toolkit.prefs.ProjectsPage" class="gene.toolkit.prefs.ProjectsPreferencesPage" name="Projects" category="gene.toolkit.prefs.GeneToolkitPreferencesPage"/>
+	  <page id="gene.toolkit.prefs.products.GcmProjectPage" class="gene.toolkit.prefs.products.GcmProjectPage" name="Common Module" category="gene.toolkit.prefs.ProjectsPage"/>
+	  <page id="gene.toolkit.prefs.products.MolProjectPage" class="gene.toolkit.prefs.products.MolProjectPage" name="Soft Molecular" category="gene.toolkit.prefs.ProjectsPage"/>
+	  <page id="gene.toolkit.prefs.products.BioProjectPage" class="gene.toolkit.prefs.products.BioProjectPage" name="Soft BioChemistry" category="gene.toolkit.prefs.ProjectsPage"/>
+	  <page id="gene.toolkit.prefs.products.HlaProjectPage" class="gene.toolkit.prefs.products.HlaProjectPage" name="Soft HLA" category="gene.toolkit.prefs.ProjectsPage"/>
+	  <page id="gene.toolkit.prefs.products.CtgProjectPage" class="gene.toolkit.prefs.products.CtgProjectPage" name="Soft Cytogenetics" category="gene.toolkit.prefs.ProjectsPage"/>
+	  <page id="gene.toolkit.prefs.products.DxpProjectPage" class="gene.toolkit.prefs.products.DxpProjectPage" name="Soft PathDx" category="gene.toolkit.prefs.ProjectsPage"/>
+	  <page id="gene.toolkit.prefs.products.AccProjectPage" class="gene.toolkit.prefs.products.AccProjectPage" name="Soft PreAnalytical" category="gene.toolkit.prefs.ProjectsPage"/>
+	  <page id="gene.toolkit.prefs.products.FlwProjectPage" class="gene.toolkit.prefs.products.FlwProjectPage" name="Soft FlowCytometry" category="gene.toolkit.prefs.ProjectsPage"/>
+     <page id="gene.toolkit.prefs.products.MicProjectPage" class="gene.toolkit.prefs.products.MicProjectPage" name="Soft Micro" category="gene.toolkit.prefs.ProjectsPage"/>
+	  <page id="gene.toolkit.prefs.products.Lab5ProjectPage" class="gene.toolkit.prefs.products.Lab5ProjectPage" name="Soft Lab" category="gene.toolkit.prefs.ProjectsPage"/>
+   </extension>
+
+</plugin>
