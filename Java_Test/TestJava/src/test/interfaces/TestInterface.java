@@ -14,6 +14,12 @@ public class TestInterface implements Interface, InterfacePackage {
 	public void Show1() {
 	}
 
+	@Override
+	public boolean Tst() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }
 
 @SuppressWarnings("unused")

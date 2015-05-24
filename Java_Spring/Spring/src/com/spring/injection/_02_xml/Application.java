@@ -16,7 +16,7 @@ public class Application {
 	@Test
 	public void test() {
 		try {
-			ApplicationContext appContext = new ClassPathXmlApplicationContext("com/spring/injection/_02_appConXml/applicationContext.xml");
+			ApplicationContext appContext = new ClassPathXmlApplicationContext("com/spring/injection/_02_xml/applicationContext.xml");
 			
 			CustomerService service = appContext.getBean("customerServiceProperty", CustomerService.class);
 			System.out.println("customerServiceProperty: " +service.findAll().get(0).getFirstname());
@@ -28,13 +28,13 @@ public class Application {
 			System.out.println("customerServicePropertyName2: " + service.findAll().get(0).getFirstname());
 			
 			service = appContext.getBean("customerServiceProperty2_1", CustomerService.class);
-			System.out.println("customerServiceProperty1_1: " + service.findAll().get(0).getFirstname());			
+			System.out.println("customerServiceProperty2_1: " + service.findAll().get(0).getFirstname());			
 			
 			service = appContext.getBean("customerServiceProperty2_2", CustomerService.class);
-			System.out.println("customerServiceProperty1_2: " + service.findAll().get(0).getFirstname());
+			System.out.println("customerServiceProperty2_2: " + service.findAll().get(0).getFirstname());
 			
 			service = appContext.getBean("customerServiceProperty2_3", CustomerService.class);
-			System.out.println("customerServiceProperty1_3: " + service.findAll().get(0).getFirstname());			
+			System.out.println("customerServiceProperty2_3: " + service.findAll().get(0).getFirstname());			
 			
 			service = appContext.getBean("customerServicePropertyWithConstant", CustomerService.class);
 			System.out.println("customerServicePropertyWithConstant: " + service.findAll().get(0).getFirstname());	
@@ -64,7 +64,7 @@ public class Application {
 			service = appContext.getBean("customerServiceCtorWithConstantInt", CustomerService.class);
 			System.out.println("customerServiceCtorWithConstantInt: " + service.findAll().get(0).getFirstname());					
 			
-			appContext = new GenericXmlApplicationContext("classpath:com/spring/injection/_02_appConXml/applicationContext.xml");
+			appContext = new GenericXmlApplicationContext("classpath:com/spring/injection/_02_xml/applicationContext.xml");
 			
 			service = appContext.getBean("customerServiceCtorWithConstant", CustomerService.class);
 			System.out.println("customerServiceCtorWithConstant: " + service.findAll().get(0).getFirstname());

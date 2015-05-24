@@ -15,23 +15,23 @@ public class CustomerServiceImpl2 implements CustomerService {
 	}
 	
 	public CustomerServiceImpl2() {
-		System.out.println("We are using default Constructor Injection 1_2");
+		System.out.println("We are using default Constructor Injection 2_1");
 	}
 	
 	public CustomerServiceImpl2(String temp) {
-		System.out.println("We are using Constructor Injection 1_2");
+		System.out.println("We are using Constructor Injection 2_1");
 		this.customerRepository = new HibernateCustomerRepositoryImpl();
 		this.desc = temp;
 	}
 	
 	public CustomerServiceImpl2(int temp) {
-		System.out.println("We are using Int Constructor Injection 1_2");
+		System.out.println("We are using Int Constructor Injection 2_1");
 		this.customerRepository = new HibernateCustomerRepositoryImpl();
 		this.desc = Integer.toString(temp) + "Int";
 	}
 	
 	public void setCustomerRepository(String temp) {
-		System.out.println("We are using Setter Injection 1_2");
+		System.out.println("We are using Setter Injection 2_1");
 		this.customerRepository = new HibernateCustomerRepositoryImpl();
 		this.desc = temp;
 	}

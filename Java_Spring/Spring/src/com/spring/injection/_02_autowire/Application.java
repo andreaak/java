@@ -17,11 +17,13 @@ public class Application {
 		try {
 			ApplicationContext appContext = new ClassPathXmlApplicationContext("com/spring/injection/_02_autowire/applicationContext.xml");
 			
+			System.out.println("Bean: customerServicePropertyByType");
 			CustomerService service = appContext.getBean("customerServicePropertyByType", CustomerService.class);
 			System.out.println(service.findAll().get(0).getFirstname() + " " +  service.getDescription());
 			System.out.println("---------");
 			
 			 service = appContext.getBean("customerServicePropertyByName", CustomerService.class);
+			System.out.println("Bean: customerServicePropertyByName");
 			System.out.println(service.findAll().get(0).getFirstname()+ " " +  service.getDescription());
 			System.out.println("---------");
 
@@ -29,6 +31,7 @@ public class Application {
 //			service = appContext.getBean("customerServicePropertyDefault", CustomerService.class);
 //			System.out.println(service.findAll().get(0).getFirstname());
 //			System.out.println("---------");
+			System.out.println("Bean: customerServiceByCtor");
 			service = appContext.getBean("customerServiceByCtor", CustomerService.class);
 			System.out.println(service.findAll().get(0).getFirstname()+ " " +  service.getDescription());
 		} catch (Exception e) {

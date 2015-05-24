@@ -14,8 +14,8 @@ public class HibernateCustomerRepositoryImpl2 implements CustomerRepository {
 		
 		Customer customer = new Customer();
 		
-		customer.setFirstname("Brian1_2");
-		customer.setLastname("Hansen1_2");
+		customer.setFirstname("Brian2");
+		customer.setLastname("Hansen2");
 		
 		customers.add(customer);
 		

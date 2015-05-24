@@ -18,7 +18,7 @@
 	p:customerRepository-ref="customerRepository2_1"/>
 	<bean id="customerServiceProperty2_2" class="com.spring.injection._01_base.service.CustomerServiceImpl">
 		<property name="customerRepository">
-			<ref local="customerRepository2_2" />
+			<ref bean ="customerRepository2_2" />
 		</property> 
 	</bean>
 	<bean id="customerServiceProperty2_3" class="com.spring.injection._01_base.service.CustomerServiceImpl">
