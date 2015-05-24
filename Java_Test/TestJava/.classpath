@@ -2,7 +2,8 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.7.0_79"/>
-	<classpathentry kind="var" path="HOME/junit-4.11.jar"/>
-	<classpathentry kind="var" path="HOME/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.7.0_51"/>
+	<classpathentry kind="var" path="HOME/lib/junit-4.11.jar"/>
+	<classpathentry kind="var" path="HOME/lib/hamcrest-core-1.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
