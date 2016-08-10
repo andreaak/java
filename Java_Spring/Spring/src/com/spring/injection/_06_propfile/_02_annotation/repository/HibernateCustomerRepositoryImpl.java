@@ -7,10 +7,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
 import com.spring.injection._01_base.model.Customer;
-import com.spring.injection._01_base.repository.CustomerRepository;
+import com.spring.injection._01_base.repository.ICustomerRepository;
 
 @Repository("customerRepository")
-public class HibernateCustomerRepositoryImpl implements CustomerRepository {
+public class HibernateCustomerRepositoryImpl implements ICustomerRepository {
 
 	@Value("${anotherName_}")
 	private String someValue;

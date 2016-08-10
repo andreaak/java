@@ -3,47 +3,50 @@ package com.spring.injection._01_base.service;
 import java.util.List;
 
 import com.spring.injection._01_base.model.Customer;
-import com.spring.injection._01_base.repository.CustomerRepository;
+import com.spring.injection._01_base.repository.ICustomerRepository;
 import com.spring.injection._01_base.repository.HibernateCustomerRepositoryImpl;
-public class CustomerServiceImpl2 implements CustomerService {
+public class CustomerServiceImpl2 implements ICustomerService {
 
+	private ICustomerRepository customerRepository;
 	
-	private CustomerRepository customerRepository;
-	private String desc;
+	private String desc = "";
 	public String getDescription() {
 		return desc;
 	}
 	
 	public CustomerServiceImpl2() {
-		System.out.println("We are using default Constructor Injection 2_1");
+		String data = "Default Constructor 2 + " + this.hashCode() + " + ";
+		System.out.println(data);
+		desc += data;
 	}
 	
 	public CustomerServiceImpl2(String temp) {
-		System.out.println("We are using Constructor Injection 2_1");
+		String data = "Constructor 2 string '" + temp + "' + " + this.hashCode() + " + ";
+		System.out.println(data);
+		desc += data;
+		
 		this.customerRepository = new HibernateCustomerRepositoryImpl();
-		this.desc = temp;
+
 	}
 	
 	public CustomerServiceImpl2(int temp) {
-		System.out.println("We are using Int Constructor Injection 2_1");
+		String data = "Constructor 2 int " + Integer.toString(temp) + " + " + this.hashCode() + " + ";
+		System.out.println(data);
+		desc += data;
+
 		this.customerRepository = new HibernateCustomerRepositoryImpl();
-		this.desc = Integer.toString(temp) + "Int";
 	}
 	
 	public void setCustomerRepository(String temp) {
-		System.out.println("We are using Setter Injection 2_1");
+		
+		String data = "Setter 2 string '" + temp + "' + " + this.hashCode() + " + ";
+		System.out.println(data);
+		desc += data;
+
 		this.customerRepository = new HibernateCustomerRepositoryImpl();
-		this.desc = temp;
 	}
 	
 	public List<Customer> findAll() {
-		
-		List<Customer> customers = customerRepository.findAll();
-		for(Customer customer : customers) {
-			
-			customer.setFirstname(desc);
-		}
-		return customers;
+		return customerRepository.findAll();
 	}
-
 }

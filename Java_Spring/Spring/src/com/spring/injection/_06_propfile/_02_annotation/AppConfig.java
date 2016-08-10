@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
-import com.spring.injection._01_base.service.CustomerService;
+import com.spring.injection._01_base.service.ICustomerService;
 import com.spring.injection._06_propfile._02_annotation.service.CustomerServiceImpl;
 
 
@@ -21,7 +21,7 @@ public class AppConfig {
 	}
 	
 	@Bean(name = "customerService")
-	public CustomerService getCustomerService() {
+	public ICustomerService getCustomerService() {
 		CustomerServiceImpl customerService = new CustomerServiceImpl();		
 		return customerService;
 	}

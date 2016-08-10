@@ -6,7 +6,7 @@ import java.util.List;
 import com.spring.injection._01_base.model.Customer;
 
 
-public class HibernateCustomerRepositoryImpl2 implements CustomerRepository {
+public class HibernateCustomerRepositoryImpl2 implements ICustomerRepository {
 
 	public List<Customer> findAll() {
 		

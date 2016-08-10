@@ -6,10 +6,10 @@ import java.util.List;
 //import org.springframework.stereotype.Repository;
 
 import com.spring.injection._01_base.model.Customer;
-import com.spring.injection._01_base.repository.CustomerRepository;
+import com.spring.injection._01_base.repository.ICustomerRepository;
 
 //@Repository("customerRepository")
-public class HibernateCustomerRepositoryImpl implements CustomerRepository {
+public class HibernateCustomerRepositoryImpl implements ICustomerRepository {
 
 	public List<Customer> findAll() {
 		

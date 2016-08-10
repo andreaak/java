@@ -7,26 +7,26 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import com.spring.injection._01_base.model.Customer;
-import com.spring.injection._01_base.repository.CustomerRepository;
-import com.spring.injection._01_base.service.CustomerService;
+import com.spring.injection._01_base.repository.ICustomerRepository;
+import com.spring.injection._01_base.service.ICustomerService;
 
 @Service("customerServiceProt")
 @Scope("prototype")
-public class CustomerServiceImpl implements CustomerService {
+public class CustomerServiceImpl implements ICustomerService {
 
-	private CustomerRepository customerRepository;
+	private ICustomerRepository customerRepository;
 	
 	public CustomerServiceImpl() {
 		
 	}
 	
-	public CustomerServiceImpl(CustomerRepository customerRepository) {
+	public CustomerServiceImpl(ICustomerRepository customerRepository) {
 		System.out.println("We are using constructor injection");
 		this.customerRepository = customerRepository;
 	}
 	
 	@Autowired
-	public void setCustomerRepository(CustomerRepository customerRepository) {
+	public void setCustomerRepository(ICustomerRepository customerRepository) {
 		System.out.println("We are using setter injection");
 		
 		this.customerRepository = customerRepository;

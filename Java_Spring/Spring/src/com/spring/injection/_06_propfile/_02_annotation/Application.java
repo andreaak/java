@@ -6,7 +6,7 @@ import org.junit.runners.JUnit4;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.spring.injection._01_base.service.CustomerService;
+import com.spring.injection._01_base.service.ICustomerService;
 
 
 @RunWith(JUnit4.class)
@@ -19,7 +19,7 @@ public class Application {
 		ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfig.class);
 		
 		
-		CustomerService service = appContext.getBean("customerService", CustomerService.class);
+		ICustomerService service = appContext.getBean("customerService", ICustomerService.class);
 		
 		
 		System.out.println(service.findAll().get(0).getFirstname());
