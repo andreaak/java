@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.spring.injection._01_base.model.Customer;
 import com.spring.injection._01_base.repository.HibernateCustomerRepositoryImpl;
-import com.spring.injection._01_base.repository.HibernateCustomerRepositoryImpl2;
 import com.spring.injection._01_base.repository.ICustomerRepository;
 public class CustomerServiceImpl implements ICustomerService {
 

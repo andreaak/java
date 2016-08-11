@@ -38,10 +38,8 @@ public class CustomerServiceImplAutowired implements ICustomerService {
 		return customerRepository.findAll();
 	}
 
-	@Override
 	public String getDescription() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 }

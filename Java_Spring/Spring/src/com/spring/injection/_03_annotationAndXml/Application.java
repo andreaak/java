@@ -6,7 +6,6 @@ import org.junit.runners.JUnit4;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.spring.injection._01_base.repository.ICustomerRepository;
 import com.spring.injection._01_base.service.ICustomerService;
 
 @RunWith(JUnit4.class)

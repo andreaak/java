@@ -3,8 +3,6 @@ package com.spring.injection._03_annotationAndXml.repository;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
-
 import com.spring.injection._01_base.model.Customer;
 import com.spring.injection._01_base.repository.ICustomerRepository;
 

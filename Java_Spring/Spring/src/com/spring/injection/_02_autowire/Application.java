@@ -13,8 +13,11 @@ public class Application {
 
 	@Test
 	public void testPropertyByName() {
+		
+		ApplicationContext appContext = null;
+		
 		try {
-			ApplicationContext appContext = new ClassPathXmlApplicationContext("com/spring/injection/_02_autowire/applicationContext.xml");
+			appContext = new ClassPathXmlApplicationContext("com/spring/injection/_02_autowire/applicationContext.xml");
 			
 			System.out.println("before GetBean customerServicePropertyByName");
 			ICustomerService service = appContext.getBean("customerServicePropertyByName", ICustomerService.class);
@@ -30,6 +33,7 @@ public class Application {
 			before GetBean customerServicePropertyByName
 			Brian2 Default Constructor 1 + 564623280 + Setter Injection By Name + 564623280 + 
 			*/
+			
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

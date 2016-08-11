@@ -2,8 +2,6 @@ package com.spring.injection._03_annotationAndXml.service;
 
 import java.util.List;
 
-import javax.annotation.Resource;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,7 +32,7 @@ public class CustomerServiceImpl implements ICustomerService {
 	public List<Customer> findAll() {
 		return customerRepository.findAll();
 	}
-	@Override
+
 	public String getDescription() {
 		// TODO Auto-generated method stub
 		return null;
