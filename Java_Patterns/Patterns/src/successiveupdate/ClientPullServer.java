@@ -1,4 +1,4 @@
-package successiveupdate;
+package successiveUpdate;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

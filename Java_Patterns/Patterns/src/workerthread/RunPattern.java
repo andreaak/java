@@ -1,4 +1,4 @@
-package workerthread;
+package workerThread;
 
 import java.io.IOException;
 public class RunPattern{

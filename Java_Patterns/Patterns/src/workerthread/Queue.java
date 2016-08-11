@@ -1,4 +1,4 @@
-package workerthread;
+package workerThread;
 
 public interface Queue{
     void put(RunnableTask r);

@@ -1,4 +1,4 @@
-package workerthread;
+package workerThread;
 
 import java.util.Vector;
 public class ConcreteQueue implements Queue{

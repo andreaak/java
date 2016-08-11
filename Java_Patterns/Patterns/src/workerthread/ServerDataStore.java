@@ -1,4 +1,4 @@
-package workerthread;
+package workerThread;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

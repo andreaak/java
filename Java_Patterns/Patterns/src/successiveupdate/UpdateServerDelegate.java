@@ -1,4 +1,4 @@
-package successiveupdate;
+package successiveUpdate;
 
 import java.util.Date;
 import java.util.HashMap;

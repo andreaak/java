@@ -1,4 +1,4 @@
-package successiveupdate;
+package successiveUpdate;
 
 import java.rmi.RemoteException;
 public class ClientPullRequester implements Runnable{

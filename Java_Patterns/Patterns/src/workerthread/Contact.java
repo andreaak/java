@@ -1,4 +1,4 @@
-package workerthread;
+package workerThread;
 
 import java.io.Serializable;
 public interface Contact extends Serializable{

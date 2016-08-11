@@ -1,4 +1,4 @@
-package successiveupdate;
+package successiveUpdate;
 
 public class UpdateException extends Exception{
     public static final int TASK_UNCHANGED = 1;

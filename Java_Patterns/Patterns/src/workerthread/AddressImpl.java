@@ -1,4 +1,4 @@
-package workerthread;
+package workerThread;
 
 public class AddressImpl implements Address{
     private String type;

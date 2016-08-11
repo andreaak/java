@@ -1,4 +1,4 @@
-package workerthread;
+package workerThread;
 
 import java.rmi.Naming;
 import java.rmi.server.UnicastRemoteObject;

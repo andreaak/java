@@ -1,4 +1,4 @@
-package workerthread;
+package workerThread;
 
 public class ContactImpl implements Contact{
     private String firstName;
