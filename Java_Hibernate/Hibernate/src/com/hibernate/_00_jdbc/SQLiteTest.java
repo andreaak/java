@@ -7,17 +7,12 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
+@RunWith(JUnit4.class)
 public class SQLiteTest {
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		new SQLiteTest().sqlliteTest();
-
-	}
-	
 	@Test
 	public void sqlliteTest() {
 
@@ -81,5 +76,4 @@ public class SQLiteTest {
 			JDBCUtils.closeConnection(conn);
 		}
 	}
-
 }
