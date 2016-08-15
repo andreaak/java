@@ -1,4 +1,4 @@
-package com.spring.injection._03_annotationAndXml;
+п»їpackage com.spring.injection._03_annotationAndXml;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ import com.spring.injection._01_base.service.LoggingInfo;
 @Service("customerService3_1")
 public class CustomerServiceImpl extends CustomerServiceBase implements ICustomerService {
 
-	//@Autowired//инжекция через Default Ctor + поле
+	//@Autowired//РёРЅР¶РµРєС†РёСЏ С‡РµСЂРµР· Default Ctor + РїРѕР»Рµ
 	private ICustomerRepository customerRepository;
 	
 	@Override
@@ -29,14 +29,14 @@ public class CustomerServiceImpl extends CustomerServiceBase implements ICustome
 		this.customerRepository = new HibernateCustomerRepositoryImpl();
 	}
 	
-	@Autowired//инжекция через ctor
+	@Autowired//РёРЅР¶РµРєС†РёСЏ С‡РµСЂРµР· ctor
 	public CustomerServiceImpl(ICustomerRepository customerRepository) {
 		LoggingInfo info = getMethodDescription("Constructor");
 		System.out.println(info);
 		this.customerRepository = customerRepository;
 	}
 	
-	//@Autowired//инжекция через Setter
+	//@Autowired//РёРЅР¶РµРєС†РёСЏ С‡РµСЂРµР· Setter
 	//@Resource(name="customerRepository3_1")//
 	public void setCustomerRepository(ICustomerRepository customerRepository) {
 		LoggingInfo info = getMethodDescription("Setter Injection");

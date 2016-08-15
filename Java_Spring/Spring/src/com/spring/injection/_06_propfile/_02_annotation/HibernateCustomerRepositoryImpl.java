@@ -1,4 +1,4 @@
-package com.spring.injection._06_propfile._02_annotation.repository;
+package com.spring.injection._06_propfile._02_annotation;
 
 import java.util.ArrayList;
 import java.util.List;

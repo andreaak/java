@@ -1,4 +1,4 @@
-package com.spring.injection._02_autowire;
+package com.spring.injection._02_xml.autowire;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

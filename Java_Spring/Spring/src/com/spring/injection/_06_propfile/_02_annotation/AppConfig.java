@@ -7,7 +7,6 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 import com.spring.injection._01_base.service.ICustomerService;
-import com.spring.injection._06_propfile._02_annotation.service.CustomerServiceImpl;
 
 
 @Configuration

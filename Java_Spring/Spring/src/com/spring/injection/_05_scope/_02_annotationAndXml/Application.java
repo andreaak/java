@@ -11,7 +11,6 @@ import com.spring.injection._01_base.service.ICustomerService;
 @RunWith(JUnit4.class)
 public class Application {
 
-	@SuppressWarnings("resource")
 	@Test
 	public void test() {
 		
@@ -46,23 +45,19 @@ public class Application {
 			System.out.println(service4.findAll().get(0).getFirstname() + " " +  service4.getDescription());	
 			
 			/*
-			Default Constructor 5_2_2 + 1866875501 + 
-			Setter Injection 5_2_2 + 1866875501 + 
+			Default Constructor 5_2_2 Hash:1409160703
 			Before getBean
-			Default Constructor 5_2 + 844112759 + 
-			Setter Injection 5_2 + 844112759 + 
-			Bryan5_2 Default Constructor 5_2 + 844112759 + Setter Injection 5_2 + 844112759 + 
-			com.spring.injection._05_scope._02_annotationAndXml.CustomerServiceImpl@32502377
-			Default Constructor 5_2 + 1426963578 + 
-			Setter Injection 5_2 + 1426963578 + 
-			com.spring.injection._05_scope._02_annotationAndXml.CustomerServiceImpl@550dbc7a
-			Default Constructor 5_2 + 556281560 + 
-			Setter Injection 5_2 + 556281560 + 
-			com.spring.injection._05_scope._02_annotationAndXml.CustomerServiceImpl@21282ed8
+			Default Constructor 5_2 Hash:661119548
+			Brian1 Default Constructor 5_2 Hash: 661119548
+			com.spring.injection._05_scope._02_annotationAndXml.CustomerServiceImpl@2767e23c
+			Default Constructor 5_2 Hash:216856121
+			com.spring.injection._05_scope._02_annotationAndXml.CustomerServiceImpl@cecf639
+			Default Constructor 5_2 Hash:480903748
+			com.spring.injection._05_scope._02_annotationAndXml.CustomerServiceImpl@1caa0244
 			---------------------------------------------------
-			com.spring.injection._05_scope._02_annotationAndXml.CustomerServiceImpl2@6f46426d
-			com.spring.injection._05_scope._02_annotationAndXml.CustomerServiceImpl2@6f46426d
-			Bryan5_2 Default Constructor 5_2_2 + 1866875501 + Setter Injection 5_2_2 + 1866875501 + 
+			com.spring.injection._05_scope._02_annotationAndXml.CustomerServiceImpl2@53fe15ff
+			com.spring.injection._05_scope._02_annotationAndXml.CustomerServiceImpl2@53fe15ff
+			Brian1 Default Constructor 5_2_2 Hash: 1409160703
 			*/				
 		} catch (Exception e) {
 			e.printStackTrace();
