@@ -3,12 +3,12 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean name="customerRepository" class="com.spring.injection._01_base.repository.HibernateCustomerRepositoryImpl" />
+	<bean name="customerRepository2" class="com.spring.injection._01_base.repository.HibernateCustomerRepositoryImpl" />
 	
-	<bean name="customerServiceSingle" class="com.spring.injection._01_base.service.CustomerServiceImpl" autowire="byName" scope="singleton" >
+	<bean name="customerServiceSingleton" class="com.spring.injection._01_base.service.CustomerServiceImpl" autowire="byName" scope="singleton" >
 		<!--<constructor-arg index="0" ref="customerRepository" />-->
 	</bean>
-	<bean name="customerServiceProt" class="com.spring.injection._01_base.service.CustomerServiceImpl" autowire="byName" scope="prototype" >
+	<bean name="customerServicePrototype" class="com.spring.injection._01_base.service.CustomerServiceImpl" autowire="byName" scope="prototype" >
 		<!--  <constructor-arg index="0" ref="customerRepository" />-->
 	</bean>
 </beans>

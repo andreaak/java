@@ -8,24 +8,29 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 	http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="customerRepository2_1" name="customerRepository2_2" class="com.spring.injection._01_base.repository.HibernateCustomerRepositoryImpl" />
+	<bean id="customerRepository2_1" name="customerRepository2_1Name" class="com.spring.injection._01_base.repository.HibernateCustomerRepositoryImpl" />
 	<bean id="customerRepository2_3" class="com.spring.injection._01_base.repository.HibernateCustomerRepositoryImpl2" />
+
+
 	
 	<bean id="customerServiceProperty" name="customerServicePropertyName,customerServicePropertyName2"  class="com.spring.injection._01_base.service.CustomerServiceImpl">
 		<property name="customerRepository" ref="customerRepository2_1" />
 	</bean>
-	<bean id="customerServiceProperty2_1" class="com.spring.injection._01_base.service.CustomerServiceImpl"
-	p:customerRepository-ref="customerRepository2_1"/>
-	<bean id="customerServiceProperty2_2" class="com.spring.injection._01_base.service.CustomerServiceImpl">
+	<bean id="customerServicePropertyRefBean" class="com.spring.injection._01_base.service.CustomerServiceImpl"
+		p:customerRepository-ref="customerRepository2_1"/>
+	<bean id="customerServicePropertyRefBeanName" class="com.spring.injection._01_base.service.CustomerServiceImpl">
 		<property name="customerRepository">
-			<ref bean ="customerRepository2_2" />
+			<ref bean ="customerRepository2_1Name" />
 		</property> 
 	</bean>
-	<bean id="customerServiceProperty2_3" class="com.spring.injection._01_base.service.CustomerServiceImpl">
+	<bean id="customerServicePropertyRefBeanId" class="com.spring.injection._01_base.service.CustomerServiceImpl">
 		<property name="customerRepository">
 			<ref bean="customerRepository2_3" />
 		</property> 
 	</bean>
+
+
+
 	<bean id="customerServicePropertyWithConstant" class="com.spring.injection._01_base.service.CustomerServiceImpl2">
 		<property name="customerRepository">
 			<value>Constant Name</value>
@@ -38,15 +43,21 @@
 			<value>90</value>
 		</property> 
 	</bean>
+
+
 		
-	<bean id="customerServiceCtor" class="com.spring.injection._01_base.service.CustomerServiceImpl" autowire="no" >
+	<bean id="customerServiceCtorRefBean" class="com.spring.injection._01_base.service.CustomerServiceImpl" autowire="no" >
 		<constructor-arg index="0" ref="customerRepository2_1" />
 	</bean>
-	<bean id="customerServiceCtor2_1" class="com.spring.injection._01_base.service.CustomerServiceImpl" autowire="no" >
-		<constructor-arg index="0" ref="customerRepository2_2" />
+	<bean id="customerServiceCtorRefBeanName" class="com.spring.injection._01_base.service.CustomerServiceImpl" autowire="no" >
+		<constructor-arg index="0" ref="customerRepository2_1Name" />
 	</bean>
-	<bean id="customerServiceCtor2_2" class="com.spring.injection._01_base.service.CustomerServiceImpl" autowire="no" 
-	c:customerRepository-ref="customerRepository2_1"/>
+	<bean id="customerServiceCtorRefBeanId" class="com.spring.injection._01_base.service.CustomerServiceImpl" autowire="no" 
+		c:customerRepository-ref="customerRepository2_1"/>
+
+
+
+		
 	<bean id="customerServiceCtorWithConstant" class="com.spring.injection._01_base.service.CustomerServiceImpl2" autowire="no" >
 		<constructor-arg index="0" value="Constant Name" />
 	</bean>
@@ -62,4 +73,6 @@
 			<value>90</value>
 		</constructor-arg>
 	</bean>
+	
+	
 </beans>

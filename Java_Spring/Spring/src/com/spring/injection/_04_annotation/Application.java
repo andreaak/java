@@ -11,24 +11,24 @@ import com.spring.injection._01_base.service.ICustomerService;
 @RunWith(JUnit4.class)
 public class Application {
 
-	@SuppressWarnings("resource")
 	@Test
 	public void testSetter() {
 		
 		try {
 			ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfig.class);
-			System.out.println("Before getBean");
+			System.out.println("Before getBean customerServiceSetter");
 			ICustomerService service= appContext.getBean("customerServiceSetter", ICustomerService.class);
-			System.out.println(service.findAll().get(0).getFirstname());
+			System.out.println(service.findAll().get(0).getFirstname() + " " +  service.getDescription());
 			/*
-			Use bean customerServiceSetter
-			Create CustomerRepository
-			Injection through Setter04
-			Use bean customerServiceCtor
-			Create CustomerRepository
-			Injection through Ctor04
-			Before getBean
-			Bryan04
+			Use getCustomerServiceSetter
+			Default Constructor 4 Hash:1047460013
+			Use getCustomerRepository
+			Setter Injection 4 Hash:1047460013
+			Use getCustomerServiceCtor
+			Use getCustomerRepository
+			Constructor 4 Hash:1025309396
+			Before getBean customerServiceSetter
+			Bryan4_1 Default Constructor 4 + Setter Injection 4 Hash: 1047460013 
 			*/
 			
 		} catch (Exception e) {
@@ -41,46 +41,21 @@ public class Application {
 		
 		try {
 			ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfig.class);
-			System.out.println("Before getBean");			
+			System.out.println("Before getBean customerServiceCtor");			
 			ICustomerService service= appContext.getBean("customerServiceCtor", ICustomerService.class);
-			System.out.println(service.findAll().get(0).getFirstname());
+			System.out.println(service.findAll().get(0).getFirstname() + " " +  service.getDescription());
 			/*
-			Use bean customerServiceSetter
-			Create CustomerRepository
-			Injection through Setter04
-			Use bean customerServiceCtor
-			Create CustomerRepository
-			Injection through Ctor04
-			Before getBean
-			Bryan04
+			Use getCustomerServiceSetter
+			Default Constructor 4 Hash:1047460013
+			Use getCustomerRepository
+			Setter Injection 4 Hash:1047460013
+			Use getCustomerServiceCtor
+			Use getCustomerRepository
+			Constructor 4 Hash:1025309396
+			Before getBean customerServiceCtor
+			Bryan4_1 Constructor 4 Hash: 1025309396
 			*/			
 	
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
-	@Test
-	public void testAutoWired() {
-		
-		try {
-		
-			ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfigAutowired.class);
-			System.out.println("Before getBean");			
-			ICustomerService service = appContext.getBean("customerService", ICustomerService.class);
-			System.out.println(service.findAll().get(0).getFirstname());
-			/*
-			Use bean customerServiceSetter
-			Create CustomerRepository
-			Injection through Setter04
-			Use bean customerServiceCtor
-			Create CustomerRepository
-			Injection through Ctor04
-			Use customerService
-			Injection through Setter042.2
-			Before getBean
-			Bryan042
-			*/				
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

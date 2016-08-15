@@ -1,4 +1,4 @@
-package com.spring.injection._04_annotation.repository;
+package com.spring.injection._04_annotation.autowired;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,13 +17,11 @@ public class HibernateCustomerRepositoryImplAutowired implements ICustomerReposi
 		
 		Customer customer = new Customer();
 		
-		customer.setFirstname("Bryan042");
-		customer.setLastname("Hansen042");
+		customer.setFirstname("Bryan4_2");
+		customer.setLastname("Hansen4_2");
 		
 		customers.add(customer);
 		
 		return customers;
-		
 	}
-
 }

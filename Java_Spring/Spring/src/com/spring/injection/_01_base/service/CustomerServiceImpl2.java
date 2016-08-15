@@ -5,44 +5,36 @@ import java.util.List;
 import com.spring.injection._01_base.model.Customer;
 import com.spring.injection._01_base.repository.ICustomerRepository;
 import com.spring.injection._01_base.repository.HibernateCustomerRepositoryImpl;
-public class CustomerServiceImpl2 implements ICustomerService {
+public class CustomerServiceImpl2 extends CustomerServiceBase implements ICustomerService {
 
-	private ICustomerRepository customerRepository;
+	private ICustomerRepository customerRepository ;
 	
-	private String desc = "";
-	public String getDescription() {
-		return desc;
+	@Override
+	protected String getIndex() {
+		return "2";
 	}
 	
 	public CustomerServiceImpl2() {
-		String data = "Default Constructor 2 + " + this.hashCode() + " + ";
-		System.out.println(data);
-		desc += data;
+		LoggingInfo info = getMethodDescription("Default Constructor");
+		System.out.println(info);
+		this.customerRepository = new HibernateCustomerRepositoryImpl();
 	}
 	
 	public CustomerServiceImpl2(String temp) {
-		String data = "Constructor 2 string '" + temp + "' + " + this.hashCode() + " + ";
-		System.out.println(data);
-		desc += data;
-		
+		LoggingInfo info = getMethodDescription("Constructor with string '" + temp + "'");
+		System.out.println(info);
 		this.customerRepository = new HibernateCustomerRepositoryImpl();
-
 	}
 	
 	public CustomerServiceImpl2(int temp) {
-		String data = "Constructor 2 int " + Integer.toString(temp) + " + " + this.hashCode() + " + ";
-		System.out.println(data);
-		desc += data;
-
+		LoggingInfo info = getMethodDescription("Constructor with int '" + temp + "'");
+		System.out.println(info);
 		this.customerRepository = new HibernateCustomerRepositoryImpl();
 	}
 	
 	public void setCustomerRepository(String temp) {
-		
-		String data = "Setter 2 string '" + temp + "' + " + this.hashCode() + " + ";
-		System.out.println(data);
-		desc += data;
-
+		LoggingInfo info = getMethodDescription("Setter Injection with string '" + temp + "'");
+		System.out.println(info);
 		this.customerRepository = new HibernateCustomerRepositoryImpl();
 	}
 	

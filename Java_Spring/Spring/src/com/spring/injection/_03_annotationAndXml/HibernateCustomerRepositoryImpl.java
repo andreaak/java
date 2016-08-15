@@ -1,4 +1,4 @@
-package com.spring.injection._03_annotationAndXml.repository;
+package com.spring.injection._03_annotationAndXml;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +23,5 @@ public class HibernateCustomerRepositoryImpl implements ICustomerRepository {
 		customers.add(customer);
 		
 		return customers;
-		
 	}
-
 }
