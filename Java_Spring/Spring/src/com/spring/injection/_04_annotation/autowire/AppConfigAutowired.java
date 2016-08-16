@@ -1,4 +1,4 @@
-package com.spring.injection._04_annotation.autowired;
+package com.spring.injection._04_annotation.autowire;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

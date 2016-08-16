@@ -9,7 +9,7 @@ public class Final_ {
 
 	static
 	{
-		d= 5;
+		d = 5;
 	}
 	
 	{

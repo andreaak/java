@@ -1,4 +1,4 @@
-package com.spring.injection._04_annotation.autowired;
+package com.spring.injection._04_annotation.autowire;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
