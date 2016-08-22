@@ -1,6 +1,10 @@
-package _01_ElementsJava._07_Methods._02_;
+package _01_ElementsJava._07_Methods;
 
-public class C02_MethodsNamedArgs {
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+
+@RunWith(JUnit4.class)
+public class _03_MethodsNamedArgs {
     // Именованные аргументы методов
 
     static int difference(int height, int width) {
