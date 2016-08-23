@@ -1,9 +1,15 @@
 package _09_Arrays;
 
-public class C09_ThreeDimentionalArray {
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+
+@RunWith(JUnit4.class)
+public class _03_ThreeDimentionalArray {
     // Массивы (трехмерный массив).
 
-    public static void main(String[] args) {
+	@Test
+	public void Tst1() {
         int[][][] array = new int[3][3][3];
 
         array[0][0][0] = 1;
@@ -36,6 +42,37 @@ public class C09_ThreeDimentionalArray {
         array[2][2][1] = 8;
         array[2][2][2] = 9;
 
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                for (int k = 0; k < 3; k++) {
+                    System.out.print(array[i][j][k] + " ");
+                }
+                System.out.print("\n");
+            }
+            System.out.print("\n");
+        }
+    }
+	
+	@Test
+	public void Tst2Fill() {
+        int[][][] array = {
+                {
+                        {1, 2, 3},
+                        {4, 5, 6},
+                        {7, 8, 9}
+                },
+                {
+                        {1, 2, 3},
+                        {4, 5, 6},
+                        {7, 8, 9}
+                },
+                {
+                        {1, 2, 3},
+                        {4, 5, 6},
+                        {7, 8, 9}
+                }
+        };
+        
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 for (int k = 0; k < 3; k++) {

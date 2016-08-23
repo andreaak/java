@@ -1,5 +1,6 @@
 package _01_ElementsJava._07_Methods;
 
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
@@ -37,7 +38,8 @@ public class _02_MethodsOverload {
 //        return s;
 //    }
 
-    public static void main(String[] args) {
+    @Test
+	public void Tst1() {
         function();                  // 1-я перегрузка.
         function("A");               // 2-я перегрузка.
         function(1);                 // 3-я перегрузка.

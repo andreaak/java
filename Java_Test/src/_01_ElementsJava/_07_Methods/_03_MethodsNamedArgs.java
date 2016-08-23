@@ -1,5 +1,6 @@
 package _01_ElementsJava._07_Methods;
 
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
@@ -11,7 +12,8 @@ public class _03_MethodsNamedArgs {
         return height - width;
     }
 
-    public static void main(String[] args) {
+    @Test
+	public void Tst1() {
         // Можно вызвать метод так:
         int difference;
         difference = difference(6, 5);
