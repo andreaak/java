@@ -1,6 +1,10 @@
-package _01_ElementsJava._07_Methods._02_;
+package _01_ElementsJava._07_Methods;
 
-public class C01_MethodsOverload {
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+
+@RunWith(JUnit4.class)
+public class _02_MethodsOverload {
     // Перегруженные методы могут отличаться типом и количеством аргументов.
 
     static void function() {                 // 1-я перегрузка.
