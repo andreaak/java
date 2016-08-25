@@ -5,24 +5,21 @@ import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.GeneratedValue;;
+
+import com.hibernate.annotation.dto.UserDetailsBase;
 
 @Entity 
 @Table (name="USER_DETAILS_EMBEDDED")
-public class UserDetailsEmb {
+public class UserDetailsEmbedded extends UserDetailsBase {
 	
-	//Use @EmbeddedId if primary keys is object
-	//@EmbeddedId
-	//private LoginName userId;
-	@Id @GeneratedValue(strategy=GenerationType.AUTO)
-	@Column (name="USER_ID")
-	private int userId;
-	// can be set for getter
-	@Column (name="USER_NAME")
-	private String userName;
+	//  Use @EmbeddedId if primary keys is object
+	//  @EmbeddedId
+	//  private LoginName userId;
+	//  or
+	//	@Id @GeneratedValue(strategy=GenerationType.AUTO)
+	//	@Column (name="USER_ID")
+	//	private int userId;
 	
 	@Embedded
 	//Override Address column name
@@ -33,27 +30,15 @@ public class UserDetailsEmb {
 		@AttributeOverride(name="pincode", column=@Column(name="HOME_PIN_CODE")),  
 	})
 	private Address homeAddress;
-	@Embedded
-	private Address2 officeAddress;
-	
-	public int getUserId() {
-		return userId;
-	}
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
-	public String getUserName() {
-		return userName;
-	}
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
 	public Address getHomeAddress() {
 		return homeAddress;
 	}
 	public void setHomeAddress(Address homeAddress) {
 		this.homeAddress = homeAddress;
 	}
+	
+	@Embedded
+	private Address2 officeAddress;
 	public Address2 getOfficeAddress() {
 		return officeAddress;
 	}

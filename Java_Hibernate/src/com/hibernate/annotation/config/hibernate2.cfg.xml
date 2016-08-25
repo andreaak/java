@@ -52,9 +52,10 @@
         <property name="hbm2ddl.auto">create</property> <!-- create update -->
 
         <!-- Names the annotated entity class -->
-		<mapping class="com.hibernate.annotation.dto._03_collection.UserDetails07Collection"/>
-		<mapping class="com.hibernate.annotation.dto._03_collection.UserDetails08FetchTypes"/>
-		<mapping class="com.hibernate.annotation.dto._04_mapping._01_oneToOne.Vehicle09"/>
+		<mapping class="com.hibernate.annotation.dto._03_collection.UserDetailsCollection"/>
+		<mapping class="com.hibernate.annotation.dto._03_collection.UserDetailsFetchTypesLazy"/>
+		<mapping class="com.hibernate.annotation.dto._03_collection.UserDetailsFetchTypesEager"/>
+				<mapping class="com.hibernate.annotation.dto._04_mapping._01_oneToOne.Vehicle09"/>
 		<mapping class="com.hibernate.annotation.dto._04_mapping._01_oneToOne.UserDetails09OneToOneMapping"/>
 		<mapping class="com.hibernate.annotation.dto._04_mapping._02_oneToMany.Vehicle10"/>
 		<mapping class="com.hibernate.annotation.dto._04_mapping._02_oneToMany.UserDetails10OneToManyMapping"/>

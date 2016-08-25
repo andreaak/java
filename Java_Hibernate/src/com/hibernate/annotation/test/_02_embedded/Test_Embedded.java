@@ -7,14 +7,15 @@ import org.junit.Test;
 import com.hibernate.annotation.HibernateUtils;
 import com.hibernate.annotation.dto._02_embedded.Address;
 import com.hibernate.annotation.dto._02_embedded.Address2;
-import com.hibernate.annotation.dto._02_embedded.UserDetailsEmb;
+import com.hibernate.annotation.dto._02_embedded.UserDetailsEmbedded;
 
-public class Test_06_Embedded {
+public class Test_Embedded {
 
 	@Test
 	public void test() {
-		UserDetailsEmb user = new UserDetailsEmb();
+		UserDetailsEmbedded user = new UserDetailsEmbedded();
 		user.setUserName("User Name");
+		
 		Address address =  new Address();
 		address.setStreet("Home Street User");
 		address.setCity("Home City User");		
@@ -32,5 +33,9 @@ public class Test_06_Embedded {
 		session.save(user);
 		session.getTransaction().commit();
 		session.close();
+		/*
+		Hibernate: insert into USER_DETAILS_EMBEDDED (USER_NAME, HOME_CITY_NAME, HOME_PIN_CODE, HOME_STATE_NAME, HOME_STREET_NAME, CITY_NAME, PIN_CODE, STATE_NAME, STREET_NAME) values (?, ?, ?, ?, ?, ?, ?, ?, ?)
+		Hibernate: select last_insert_rowid()
+		*/
 	}
 }

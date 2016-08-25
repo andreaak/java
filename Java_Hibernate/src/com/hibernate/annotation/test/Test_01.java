@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
 
 import com.hibernate.annotation.HibernateUtils;
 import com.hibernate.annotation.dto.UserDetails01;
-import com.hibernate.annotation.dto.UserDetails02Annotation;
+import com.hibernate.annotation.dto.UserDetailsAnnotation;
 
 
 @RunWith(JUnit4.class)
@@ -22,27 +22,33 @@ public class Test_01 {
 
 	@Test
 	public void testSave() {
-		UserDetails01 user1 = new UserDetails01();
-		user1.setUserId(1);
-		user1.setUserName("First User");
 		
-		UserDetails01 user2 = new UserDetails01();
-		user2.setUserId(2);
-		user2.setUserName("Second User");		
-		
-		UserDetails01 user = new UserDetails01();
-		user.setUserId(3);
-		user.setUserName("Third User");
-		
-		
-		
-		SessionFactory  sessionFactory = HibernateUtils.getSessionFactory();
-		Session session = sessionFactory.openSession();
-		logger.debug("Hello World");
-		session.beginTransaction();
-		session.save(user);
-		session.getTransaction().commit();
-		session.close();
+		try
+		{
+			UserDetails01 user1 = new UserDetails01();
+			user1.setUserId(1);
+			user1.setUserName("First User");
+			
+			UserDetails01 user2 = new UserDetails01();
+			user2.setUserId(2);
+			user2.setUserName("Second User");		
+			
+			UserDetails01 user = new UserDetails01();
+			user.setUserId(3);
+			user.setUserName("Third User");
+			
+			SessionFactory  sessionFactory = HibernateUtils.getSessionFactory();
+			Session session = sessionFactory.openSession();
+			logger.debug("Hello World");
+			session.beginTransaction();
+			session.save(user);
+			session.getTransaction().commit();
+			session.close();		
+		}
+		catch(Exception ex)
+		{
+			ex.printStackTrace();
+		}
 		/*
 		Hibernate: insert into UserDetails01 (userName, userId) values (?, ?)
 		*/
@@ -50,25 +56,35 @@ public class Test_01 {
 	
 	@Test
 	public void testSaveAnnotation() {
-		UserDetails02Annotation user = new UserDetails02Annotation();
-		user.setUserId(4);
-		user.setUserName("First User");
-		user.setAddress("First User's address");
-		user.setJoinedDate(new Date());
-		user.setDescription("First User's description");	
-		user.setSureName("First User's SureName");
-		
-		SessionFactory  sessionFactory = HibernateUtils.getSessionFactory();
-		Session session = sessionFactory.openSession();
-		session.beginTransaction();
-		session.save(user);
-		session.getTransaction().commit();    // if don't do that - object doesn't save
-		session.close();
+		try
+		{
+			UserDetailsAnnotation user = new UserDetailsAnnotation();
+			user.setUserId(4);
+			user.setUserName("First User");
+			user.setAddress("First User's address");
+			user.setJoinedDate(new Date());
+			user.setDescription("First User's description");	
+			user.setSureName("First User's SureName");
+			
+			SessionFactory  sessionFactory = HibernateUtils.getSessionFactory();
+			Session session = sessionFactory.openSession();
+			session.beginTransaction();
+			session.save(user);
+			session.getTransaction().commit();    // if don't do that - object doesn't save
+			session.close();			
+		}
+		catch(Exception ex)
+		{
+			ex.printStackTrace();
+		}
+		/*
+		Hibernate: insert into USER_DETAILS_ANNOTATED (Address, Description, joinedDate, USER_NAME, userId) values (?, ?, ?, ?, ?)
+		*/
 	}
 	
 	@Test
 	public void testRetrieve() {
-		UserDetails02Annotation user = new UserDetails02Annotation();
+		UserDetailsAnnotation user = new UserDetailsAnnotation();
 		user.setUserId(6);
 		user.setUserName("Fifth User");
 		user.setAddress("Fifth User's address");
@@ -86,7 +102,7 @@ public class Test_01 {
 		//Retrieve
 		sessionFactory = HibernateUtils.getSessionFactory();
 		session = sessionFactory.openSession();
-		user = (UserDetails02Annotation)session.get(UserDetails02Annotation.class, 6);
+		user = (UserDetailsAnnotation)session.get(UserDetailsAnnotation.class, 6);
 		System.out.println("User Name " + user.getUserName());
 		System.out.println("User Adress " + user.getAddress());
 		System.out.println("User SureName " + user.getSureName());
@@ -97,7 +113,7 @@ public class Test_01 {
 		
 		sessionFactory = HibernateUtils.getSessionFactory();
 		session = sessionFactory.openSession();
-		user = (UserDetails02Annotation)session.get(UserDetails02Annotation.class, 6);
+		user = (UserDetailsAnnotation)session.get(UserDetailsAnnotation.class, 6);
 		System.out.println("User Name " + user.getUserName());
 		System.out.println("User Adress " + user.getAddress());
 		System.out.println("User SureName " + user.getSureName());
@@ -106,7 +122,7 @@ public class Test_01 {
 	
 	@Test
 	public void testDelete() {
-		UserDetails02Annotation user = new UserDetails02Annotation();
+		UserDetailsAnnotation user = new UserDetailsAnnotation();
 		user.setUserId(6);
 		user.setUserName("Fifth User");
 		user.setAddress("Fifth User's address");
@@ -124,7 +140,7 @@ public class Test_01 {
 		sessionFactory = HibernateUtils.getSessionFactory();
 		session = sessionFactory.openSession();
 		session.beginTransaction();
-		user = (UserDetails02Annotation)session.get(UserDetails02Annotation.class, 6);
+		user = (UserDetailsAnnotation)session.get(UserDetailsAnnotation.class, 6);
 		System.out.println("User Name " + user.getUserName());
 		System.out.println("User Adress " + user.getAddress());
 		System.out.println("User SureName " + user.getSureName());
@@ -134,14 +150,14 @@ public class Test_01 {
 		
 		sessionFactory = HibernateUtils.getSessionFactory();
 		session = sessionFactory.openSession();
-		user = (UserDetails02Annotation)session.get(UserDetails02Annotation.class, 6);
+		user = (UserDetailsAnnotation)session.get(UserDetailsAnnotation.class, 6);
 		System.out.println("User: " + user);
 		session.close();
 	}
 	
 	@Test
 	public void testUpdate() {
-		UserDetails02Annotation user = new UserDetails02Annotation();
+		UserDetailsAnnotation user = new UserDetailsAnnotation();
 		user.setUserId(6);
 		user.setUserName("Fifth User");
 		user.setAddress("Fifth User's address");
@@ -160,7 +176,7 @@ public class Test_01 {
 		sessionFactory = HibernateUtils.getSessionFactory();
 		session = sessionFactory.openSession();
 		session.beginTransaction();
-		user = (UserDetails02Annotation)session.get(UserDetails02Annotation.class, 6);
+		user = (UserDetailsAnnotation)session.get(UserDetailsAnnotation.class, 6);
 		System.out.println("User Name " + user.getUserName());
 		System.out.println("User Adress " + user.getAddress());
 		System.out.println("User SureName " + user.getSureName());
@@ -172,7 +188,7 @@ public class Test_01 {
 		
 		sessionFactory = HibernateUtils.getSessionFactory();
 		session = sessionFactory.openSession();
-		user = (UserDetails02Annotation)session.get(UserDetails02Annotation.class, 6);
+		user = (UserDetailsAnnotation)session.get(UserDetailsAnnotation.class, 6);
 		System.out.println("User Name " + user.getUserName());
 		System.out.println("User Adress " + user.getAddress());
 		System.out.println("User SureName " + user.getSureName());
@@ -181,7 +197,7 @@ public class Test_01 {
 	
 	@Test
 	public void testUpdateAfterSave() {
-		UserDetails02Annotation user = new UserDetails02Annotation();
+		UserDetailsAnnotation user = new UserDetailsAnnotation();
 		user.setUserId(6);
 		user.setUserName("Fifth User");
 		user.setAddress("Fifth User's address");
@@ -202,7 +218,7 @@ public class Test_01 {
 		
 		sessionFactory = HibernateUtils.getSessionFactory();
 		session = sessionFactory.openSession();
-		user = (UserDetails02Annotation)session.get(UserDetails02Annotation.class, 6);
+		user = (UserDetailsAnnotation)session.get(UserDetailsAnnotation.class, 6);
 		System.out.println("User Name: " + user.getUserName());
 		System.out.println("User Adress: " + user.getAddress());
 		System.out.println("User SureName: " + user.getSureName());

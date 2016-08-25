@@ -11,18 +11,16 @@ package com.hibernate._00_dialect;
  */
 import java.sql.Types;
 
-import org.hibernate.Hibernate;
 import org.hibernate.dialect.Dialect;
-//import org.hibernate.dialect.function.AbstractAnsiTrimEmulationFunction;
 import org.hibernate.dialect.function.NoArgSQLFunction;
-//import org.hibernate.dialect.function.SQLFunction;
 import org.hibernate.dialect.function.SQLFunctionTemplate;
 import org.hibernate.dialect.function.StandardSQLFunction;
 import org.hibernate.dialect.function.VarArgsSQLFunction;
-//import org.hibernate.type.StringType;;
+import org.hibernate.type.IntegerType;
+import org.hibernate.type.StringType;
 
 public class SQLiteDialect extends Dialect {
-  @SuppressWarnings("deprecation")
+
 public SQLiteDialect() {
     registerColumnType(Types.BIT, "boolean");
     registerColumnType(Types.TINYINT, "tinyint");
@@ -48,15 +46,15 @@ public SQLiteDialect() {
     registerColumnType(Types.BOOLEAN, "boolean");
 
     //registerFunction( "abs", new StandardSQLFunction("abs") );
-    registerFunction( "concat", new VarArgsSQLFunction(Hibernate.STRING, "", "||", "") );
+    registerFunction( "concat", new VarArgsSQLFunction(StringType.INSTANCE, "", "||", "") );
     //registerFunction( "length", new StandardSQLFunction("length", StandardBasicTypes.LONG) );
     //registerFunction( "lower", new StandardSQLFunction("lower") );
-    registerFunction( "mod", new SQLFunctionTemplate(Hibernate.INTEGER, "?1 % ?2" ) );
-    registerFunction( "quote", new StandardSQLFunction("quote", Hibernate.STRING) );
-    registerFunction( "random", new NoArgSQLFunction("random", Hibernate.INTEGER) );
+    registerFunction( "mod", new SQLFunctionTemplate(IntegerType.INSTANCE, "?1 % ?2" ) );
+    registerFunction( "quote", new StandardSQLFunction("quote", StringType.INSTANCE) );
+    registerFunction( "random", new NoArgSQLFunction("random", IntegerType.INSTANCE) );
     registerFunction( "round", new StandardSQLFunction("round") );
-    registerFunction( "substr", new StandardSQLFunction("substr", Hibernate.STRING) );
-    registerFunction( "substring", new SQLFunctionTemplate( Hibernate.STRING, "substr(?1, ?2, ?3)" ) );
+    registerFunction( "substr", new StandardSQLFunction("substr", StringType.INSTANCE) );
+    registerFunction( "substring", new SQLFunctionTemplate( StringType.INSTANCE, "substr(?1, ?2, ?3)" ) );
 //    registerFunction( "trim", new AbstractAnsiTrimEmulationFunction() {
 //        protected SQLFunction resolveBothSpaceTrimFunction() {
 //          return new SQLFunctionTemplate(Hibernate.STRING, "trim(?1)");

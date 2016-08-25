@@ -53,9 +53,9 @@
 
         <!-- Names the annotated entity class -->
         <mapping class="com.hibernate.annotation.dto.UserDetails01"/>
-        <mapping class="com.hibernate.annotation.dto.UserDetails02Annotation"/>
+        <mapping class="com.hibernate.annotation.dto.UserDetailsAnnotation"/>
         <mapping class="com.hibernate.annotation.dto._01_primarykeys.UserDetailsPK"/>
-		<mapping class="com.hibernate.annotation.dto._02_embedded.UserDetailsEmb"/>
+		<mapping class="com.hibernate.annotation.dto._02_embedded.UserDetailsEmbedded"/>
         <mapping class="com.hibernate.annotation.dto._06_queries.UserDetails"/>
 		<mapping class="com.hibernate.annotation.dto._07_criteria.UserDetailsCriteria"/>
     </session-factory>

@@ -7,9 +7,6 @@ import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.Table;
@@ -18,40 +15,23 @@ import org.hibernate.annotations.CollectionId;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 
+import com.hibernate.annotation.dto.UserDetailsBase;
+
 @Entity 
-@Table (name="USER_DETAILS_08_FETCH_TYPES")
-public class UserDetails08FetchTypes {
+@Table (name="USER_DETAILS_FETCH_TYPES_LAZY")
+public class UserDetailsFetchTypesLazy extends UserDetailsBase {
 	
-	@Id @GeneratedValue(strategy=GenerationType.AUTO)
-	@Column (name="USER_ID")
-	private int userId;
-	// can be set for getter
-	@Column (name="USER_NAME")
-	private String userName;	
 	//@ElementCollection //Default - Lazy
 	@ElementCollection(fetch=FetchType.LAZY)//Use Lazy for Lazy Load and EAGER  for instant load.
 	@JoinTable(name="USER_ADDRESS_08_FETCH_TYPES", 
 	joinColumns=@JoinColumn(name="USER_ID"))
 	@GenericGenerator(name="hilogen", strategy="increment")
 	@CollectionId(columns = { @Column(name="ADDRESS_ID") }, generator = "hilogen", type = @Type(type = "long"))
-	private Collection<Address07> listOfAdresses = new ArrayList<Address07>();
-	
-	public int getUserId() {
-		return userId;
+	private Collection<Address> collectionOfAdresses = new ArrayList<Address>();
+	public Collection<Address> getCollectionOfAdresses() {
+		return collectionOfAdresses;
 	}
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
-	public String getUserName() {
-		return userName;
-	}
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-	public Collection<Address07> getListOfAdresses() {
-		return listOfAdresses;
-	}
-	public void setListOfAdresses(Collection<Address07> listOfAdresses) {
-		this.listOfAdresses = listOfAdresses;
+	public void setCollectionOfAdresses(Collection<Address> collectionOfAdresses) {
+		this.collectionOfAdresses = collectionOfAdresses;
 	}
 }
