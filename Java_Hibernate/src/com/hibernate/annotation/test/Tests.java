@@ -16,9 +16,9 @@ import com.hibernate.annotation.dto.UserDetailsAnnotation;
 
 
 @RunWith(JUnit4.class)
-public class Test_01 {
+public class Tests {
 
-	private static Logger logger = LoggerFactory.getLogger(Test_01.class);
+	private static Logger logger = LoggerFactory.getLogger(Tests.class);
 
 	@Test
 	public void testSave() {
@@ -39,9 +39,10 @@ public class Test_01 {
 			
 			SessionFactory  sessionFactory = HibernateUtils.getSessionFactory();
 			Session session = sessionFactory.openSession();
-			logger.debug("Hello World");
+			logger.info("Hello World");
 			session.beginTransaction();
-			session.save(user);
+			Integer id = (Integer)session.save(user);
+			System.out.println("id = " + id);;
 			session.getTransaction().commit();
 			session.close();		
 		}
@@ -50,6 +51,7 @@ public class Test_01 {
 			ex.printStackTrace();
 		}
 		/*
+		id = 3 
 		Hibernate: insert into UserDetails01 (userName, userId) values (?, ?)
 		*/
     }
