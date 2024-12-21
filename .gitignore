@@ -1,6 +1,7 @@
 *~
 bin
 obj
+out
 *.exe
 *.rar
 *.7z
@@ -20,3 +21,4 @@ Temp
 .svn
 
 
+/.idea
