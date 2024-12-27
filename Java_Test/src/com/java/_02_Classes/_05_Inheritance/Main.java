@@ -78,7 +78,7 @@ public class Main {
     }
 
     @Test
-    public void Test4() {
+    public void Test4Override() {
         DerivedClass instance = new DerivedClass();
         instance.method();
         instance.staticMethod();
@@ -103,6 +103,17 @@ public class Main {
         method from DerivedClass
         staticMethod from BaseClass
         staticMethod from DerivedClass
+         */
+    }
+
+    @Test
+    public void Test4BaseClassMethod() {
+        DerivedClass instance = new DerivedClass();
+        instance.method2();
+
+        /*
+        method from BaseClass
+        method2 from DerivedClass
          */
     }
 }

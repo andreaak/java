@@ -4,15 +4,13 @@ import org.junit.Test;
 
 public class Main {
     @Test
-    public void Test1() {
+    public void Test1DefaultCtor() {
 
         AnimalDefaultCtor animal = new AnimalDefaultCtor();
         System.out.println(animal);
 
         // Компилятор нам не даст возможности создать объект с приватным консруктором
         //Animal animal2 = new Animal(true);
-
-
     }
 
     @Test

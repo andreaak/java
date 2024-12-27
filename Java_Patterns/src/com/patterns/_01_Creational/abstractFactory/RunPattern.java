@@ -1,5 +1,8 @@
 package com.patterns._01_Creational.abstractFactory;
 
+import com.patterns._01_Creational.abstractFactory.address.Address;
+import com.patterns._01_Creational.abstractFactory.phoneNumber.PhoneNumber;
+
 public class RunPattern{
     public static void main(String [] arguments){
         System.out.println("Example for the AbstractFactory pattern");

@@ -46,6 +46,11 @@ public class BaseClass {
         System.out.println("method from BaseClass");
     }
 
+    public void method2() {
+        // Вызов метода базового класса.
+        System.out.println("method from DerivedClass");
+    }
+
     public static void staticMethod() {
         System.out.println("staticMethod from BaseClass");
     }

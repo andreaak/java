@@ -5,9 +5,9 @@ package com.java._02_Classes._05_Inheritance;
  */
 public class DerivedClass extends BaseClass {
 
-    public static int a = GetIntSt("DerivedClass.Static var a");
+    public static int a = GetIntStatic("DerivedClass.Static var a");
     public int b = GetInt("DerivedClass.Var b");
-    public int c = GetIntSt("DerivedClass StaticMethod c");
+    public int c = GetIntStatic("DerivedClass StaticMethod c");
 
     public int e;
 
@@ -37,31 +37,41 @@ public class DerivedClass extends BaseClass {
     // вызывается пользовательский конструктор базового класса, при этом не нужно,
     // присваивать значения, унаследованным членам в конструкторе производного класса.
     public DerivedClass(int a) {
+        //super(e); Только static переменные класса могут быть переданы в конструктор с параметрами,
+        //вызывающийся через слово super(//параметр//) или this(//параметр//)
         super(a);
         System.out.println("DerivedClass.Ctor2");
     }
 
+    @Override
     public void method() {
         System.out.println("method from DerivedClass");
     }
 
-    public static void staticMethod() {
+    @Override
+    public void method2() {
+        // Вызов метода базового класса.
+        super.method();
+        System.out.println("method2 from DerivedClass");
+    }
 
+    public static void staticMethod() {
         System.out.println("staticMethod from DerivedClass");
     }
 
-    private static int GetIntSt(String text) {
+    private static int GetIntStatic(String text) {
         System.out.println(text);
         return 21;
     }
 
     private int GetInt(String text) {
         System.out.println(text);
+        e = a;
         return 2;
     }
 
     @Override
-    protected void InhTest() {
+    protected void InhTest() {// Access Modifier should be same or wider
     }
 
     @Override
@@ -69,25 +79,22 @@ public class DerivedClass extends BaseClass {
     }
 
     @Override
-    public DerivedClass InhTest4() {
+    public DerivedClass InhTest4() {// Can use subclass like return param - ковариантный возврат
         return new DerivedClass();
     }
 
 //	@Override
-//	protected BaseClass InhTest5()
-//	{
-//		return new BaseClass();
+//	protected Animal InhTest5() {
+//		return new Animal(1);
 //	}
 
-//	@Override
-//	protected void InhTest6(TestA b)
-//	{
+//    @Override
+//    protected void InhTest6(BaseClass b) {//Input class should be same like in base class
 //
-//	}
+//    }
+
+//    @Override
+//    protected void InhTest7(DerivedClass b) {//Input class should be same like in base class
 //
-//	@Override
-//	protected void InhTest7(TestB b)
-//	{
-//
-//	}
+//    }
 }
