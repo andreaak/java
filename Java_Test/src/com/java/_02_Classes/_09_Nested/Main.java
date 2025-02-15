@@ -13,38 +13,49 @@ public class Main {
 
     @Test
     public void Test1() {
-        OuterClass.Nested instance = new OuterClass().new Nested();
+        _01_OuterClass.Nested instance = new _01_OuterClass().new Nested();
         instance.methodNested();
-        instance.methodFromBase();
+        instance.methodFromBaseNested();
+
+        /*
+        _01_OuterClass.methodOuter
+        _01_OuterClass.methodOuterStatic
+        Nested.methodNested
+        BaseClassNested.methodFromBaseNested
+         */
     }
 
     @Test
     public void Test2Inheritance() {
-        OuterClass instance1 = new OuterClass();
+        _01_OuterClass instance1 = new _01_OuterClass();
         instance1.methodOuter();
         instance1.methodFromBaseClassOuter();
 
-        OuterClass.Nested instance = new OuterClass().new Nested();
+        _01_OuterClass.Nested instance = new _01_OuterClass().new Nested();
         instance.methodNested();
-        instance.methodFromBase();
+        instance.methodFromBaseNested();
 
         /*
-        OuterClass.methodOuter
-        BaseClassOuter.methodFromBase
-        Nested.method
-        BaseClass.methodFromBase
+        _01_OuterClass.methodOuter
+        BaseClassOuter.methodFromBaseClassOuter
+        _01_OuterClass.methodOuter
+        _01_OuterClass.methodOuterStatic
+        Nested.methodNested
+        BaseClassNested.methodFromBaseNested
          */
     }
 
     @Test
     public void Test3StaticNested() {
-        OuterClass.NestedStatic.staticMethodFromNested();
+        _02_OuterClassStatic.NestedStatic.staticMethodFromNested();
 
-        OuterClass.NestedStatic instance = new OuterClass.NestedStatic();
+        _02_OuterClassStatic.NestedStatic instance = new _02_OuterClassStatic.NestedStatic();
         instance.staticMethodFromNested();
 
         /*
+        _02_OuterClassStatic.methodOuterStatic
         NestedStatic.staticMethodFromNested
+        _02_OuterClassStatic.methodOuterStatic
         NestedStatic.staticMethodFromNested
         */
     }

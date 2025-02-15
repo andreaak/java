@@ -20,4 +20,9 @@ class Car extends Object {
 //        return super.toString();
 //    }
 
+
+    @Override
+    protected void finalize() throws Throwable {
+        System.out.println("Finalize");
+    }
 }

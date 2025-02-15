@@ -5,6 +5,7 @@ public class SomeClassMultiInterface implements SomeInterface1, SomeInterface2, 
         System.out.println("SomeClassMultiInterface.method1");
     }
 
+    //Если не переопределить этот метод, то возникнет ошибка неопределенности
     @Override
     public int defaultMethod() {
         System.out.println("SomeClassMultiInterface.defaultMethod");

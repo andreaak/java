@@ -54,6 +54,14 @@ public class Main {
         }
 
         System.out.println("Конец кода.");
+
+        /*
+        Попытка деления на ноль.
+        Обработка исключения.
+        / by zero
+        Блок finally.
+        Конец кода.
+         */
     }
 
     @Test
@@ -68,10 +76,14 @@ public class Main {
         }finally {
             System.out.println("Finaly");
         }
+
+        /*
+        Try
+         */
     }
 
     @Test
-    public void Test6() {
+    public void Test6Include() {
         try {
             try {
                 try {

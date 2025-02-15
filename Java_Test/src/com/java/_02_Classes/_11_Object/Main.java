@@ -162,6 +162,17 @@ public class Main {
         806948410
         */
     }
+
+    @Test
+    public void Test5Finalize() {
+        Car car = new Car(1, "blue");
+        car = null;
+        System.gc();
+
+        /*
+        Finalize
+        */
+    }
 }
 
 

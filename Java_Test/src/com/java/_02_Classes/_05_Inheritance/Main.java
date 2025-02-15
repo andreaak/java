@@ -34,27 +34,32 @@ public class Main {
     public void Test2() {
         DerivedClass b = new DerivedClass();
         /*
-        BaseClass.Static var a
+        BaseClass. Static var a
         BaseClass.Static initializer
-        DerivedClass.Static var a
+        DerivedClass. Static var a
         DerivedClass.Static initializer
-        BaseClass.Var b
-        BaseClass StaticMethod c
+
+        BaseClass. Var b
+        BaseClass. Var c with StaticMethod
         BaseClass.Initializer
         BaseClass.Ctor1
-        DerivedClass.Var b
-        DerivedClass StaticMethod c
+        DerivedClass. Var b
+        DerivedClass. Var c with StaticMethod
         DerivedClass.Initializer
         DerivedClass.Ctor1
         */
         DerivedClass b2 = new DerivedClass(1);
         /*
-        BaseClass.Var b
-        BaseClass StaticMethod c
+        DerivedClass. Var b
+        DerivedClass. Var c with StaticMethod
+        DerivedClass.Initializer
+        DerivedClass.Ctor1
+        BaseClass. Var b
+        BaseClass. Var c with StaticMethod
         BaseClass.Initializer
         BaseClass.Ctor2
-        DerivedClass.Var b
-        DerivedClass StaticMethod c
+        DerivedClass. Var b
+        DerivedClass. Var c with StaticMethod
         DerivedClass.Initializer
         DerivedClass.Ctor2
         */

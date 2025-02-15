@@ -14,9 +14,9 @@ public class BaseClass {
     // Защищенное поле.
     protected String protectedField = "BaseClass.protectedField";
 
-    public static int a = GetIntSt("BaseClass.Static var a");
-    public int b = GetInt("BaseClass.Var b");
-    public int c = GetIntSt("BaseClass StaticMethod c");
+    public static int a = GetIntSt("BaseClass. Static var a");
+    public int b = GetInt("BaseClass. Var b");
+    public int c = GetIntSt("BaseClass. Var c with StaticMethod");
 
     public int e;
 
@@ -29,7 +29,7 @@ public class BaseClass {
         e = 1;
     }
 
-    public BaseClass(int a) {
+    public BaseClass(int a, int b) {
         System.out.println("BaseClass.Ctor2");
     }
 

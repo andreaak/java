@@ -98,11 +98,16 @@ public class _02_ArrayList {
 		while (listIterator.hasNext()) {
 			Integer integer = listIterator.next();
 			System.out.println(integer);
+
+			if(listIterator.hasPrevious()) {
+				integer = listIterator.previous();
+				System.out.println(integer);
+			}
 		}
 	}
 
 	@Test
-    public void Test1IteratorWithFor() {
+    public void Test4IteratorWithFor() {
 		ArrayList<String> list =  new ArrayList<String>();
 		list.add("1");
 		list.add("2");
@@ -120,7 +125,7 @@ public class _02_ArrayList {
     }
 
 	@Test
-    public void Test3RemoveItem() {
+    public void Test5RemoveItem() {
 		ArrayList<String> list =  new ArrayList<String>();
 		list.add("1");
 		list.add("2");
@@ -133,7 +138,114 @@ public class _02_ArrayList {
 			if(i++ == 1) {
 				it.remove();//use it.remove() after it.next()
 			}
-			//System.out.println(it.next());
 		}
+
+		System.out.println(list);
+
+		/*
+		1
+		2
+		3
+		[1, 3]
+		 */
     }
+
+	@Test
+	public void Test6SortComparable() {
+		ArrayList<Fruit> list =  new ArrayList<>();
+		Fruit mango = new Fruit("mango", 50, true);
+		Fruit apple = new Fruit("apple", 15, false);
+		Fruit banana = new Fruit("banana", 35, true);
+		Fruit orange = new Fruit("orange", 24, true);
+		list.add(mango);
+		list.add(apple);
+		list.add(banana);
+		list.add(orange);
+		list.add(apple);
+
+		System.out.println(list);
+		/*
+		[Fruit{name='mango', cost=50, isRipe=true}, Fruit{name='apple', cost=15, isRipe=false},
+		Fruit{name='banana', cost=35, isRipe=true}, Fruit{name='orange', cost=24, isRipe=true},
+		Fruit{name='apple', cost=15, isRipe=false}]
+		*/
+
+		list.sort(null);
+		System.out.println(list);
+
+		/*
+		[Fruit{name='apple', cost=15, isRipe=false}, Fruit{name='apple', cost=15, isRipe=false},
+		Fruit{name='banana', cost=35, isRipe=true}, Fruit{name='mango', cost=50, isRipe=true},
+		Fruit{name='orange', cost=24, isRipe=true}]
+
+		 */
+	}
+
+	@Test
+	public void Test7SortComparator() {
+		ArrayList<Fruit> list =  new ArrayList<>();
+		Fruit mango = new Fruit("mango", 50, true);
+		Fruit apple = new Fruit("apple", 15, false);
+		Fruit banana = new Fruit("banana", 35, true);
+		Fruit orange = new Fruit("orange", 24, true);
+		list.add(mango);
+		list.add(apple);
+		list.add(banana);
+		list.add(orange);
+		list.add(apple);
+
+		System.out.println(list);
+		/*
+		[Fruit{name='mango', cost=50, isRipe=true},
+		Fruit{name='apple', cost=15, isRipe=false},
+		Fruit{name='banana', cost=35, isRipe=true},
+		Fruit{name='orange', cost=24, isRipe=true},
+		Fruit{name='apple', cost=15, isRipe=false}]
+		*/
+
+		list.sort(new Comparator<Fruit>() {
+			public int compare(Fruit o1, Fruit o2) {
+				return o1.getName().compareTo(o2.getName());
+			}
+		});
+
+		System.out.println(list);
+
+		/*
+		[Fruit{name='apple', cost=15, isRipe=false},
+		Fruit{name='apple', cost=15, isRipe=false},
+		Fruit{name='banana', cost=35, isRipe=true},
+		Fruit{name='mango', cost=50, isRipe=true},
+		Fruit{name='orange', cost=24, isRipe=true}]
+
+		 */
+
+		list.sort(new Comparator<Fruit>() {
+			public int compare(Fruit o1, Fruit o2) {
+				return o2.getName().compareTo(o1.getName());
+			}
+		});
+
+		System.out.println(list);
+
+		/*
+		[Fruit{name='orange', cost=24, isRipe=true},
+		Fruit{name='mango', cost=50, isRipe=true},
+		Fruit{name='banana', cost=35, isRipe=true},
+		Fruit{name='apple', cost=15, isRipe=false},
+		Fruit{name='apple', cost=15, isRipe=false}]
+		 */
+
+		list.sort(new ComparatorByCost());
+
+		System.out.println(list);
+
+		/*
+		[Fruit{name='apple', cost=15, isRipe=false},
+		Fruit{name='apple', cost=15, isRipe=false},
+		Fruit{name='orange', cost=24, isRipe=true},
+		Fruit{name='banana', cost=35, isRipe=true},
+		Fruit{name='mango', cost=50, isRipe=true}]
+		 */
+	}
 }

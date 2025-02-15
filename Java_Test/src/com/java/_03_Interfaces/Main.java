@@ -12,6 +12,7 @@ import com.java._03_Interfaces._03_Inheritance.ExtendsInterface3;
 import com.java._03_Interfaces._03_Inheritance.SomeExtendsClass;
 import com.java._03_Interfaces._04_AbstractClass.ConcreteClass;
 import com.java._03_Interfaces._05_ClassInheritance.DerivedClass;
+import com.java._03_Interfaces._05_ClassInheritance.DerivedClass2;
 import com.java._03_Interfaces._05_ClassInheritance.InterfaceClassInheritance;
 import org.junit.Test;
 
@@ -90,7 +91,13 @@ public class Main {
         instance.method3();
         instance.defaultMethod();
         instance.defaultMethod2();
-
+        /*
+        SomeClassMultiInterface.method1
+        SomeClassMultiInterface.method2
+        SomeClassMultiInterface.method3
+        SomeClassMultiInterface.defaultMethod
+        SomeInterface1.defaultMethod2
+         */
         // UpCast
         SomeInterface1 instanceUp1 = instance;
         instanceUp1.method1();
@@ -98,6 +105,11 @@ public class Main {
         instanceUp1.defaultMethod2();
         //instanceUp1.method2(); // Error
         //instanceUp1.method3(); // Error
+        /*
+        SomeClassMultiInterface.method1
+        SomeClassMultiInterface.defaultMethod
+        SomeInterface1.defaultMethod2
+         */
 
         // UpCast
         SomeInterface2 instanceUp2 = instance;
@@ -106,12 +118,19 @@ public class Main {
         //instanceUp2.defaultMethod2();
         // instanceUp2.method1(); // Error
         // instanceUp2.method3(); // Error
+        /*
+        SomeClassMultiInterface.method2
+        SomeClassMultiInterface.defaultMethod
+         */
 
         // UpCast
         SomeInterface3 instanceUp3 = instance;
         instanceUp3.method3();
         // instanceUp3.method1(); // Error
         // instanceUp3.method2(); // Error
+        /*
+        SomeClassMultiInterface.method3
+        */
 
         // DownCast
         SomeClassMultiInterface instanceDown = (SomeClassMultiInterface) instanceUp1;
@@ -120,10 +139,18 @@ public class Main {
         instanceDown.method3();
         instanceDown.defaultMethod();
         instanceDown.defaultMethod2();
+
+        /*
+        SomeClassMultiInterface.method1
+        SomeClassMultiInterface.method2
+        SomeClassMultiInterface.method3
+        SomeClassMultiInterface.defaultMethod
+        SomeInterface1.defaultMethod2
+         */
     }
 
     @Test
-    public void Test3Extends() {
+    public void Test3InterfaceInheritance() {
 
         SomeExtendsClass instance = new SomeExtendsClass();
         instance.method1();
@@ -145,6 +172,24 @@ public class Main {
         instance3.method2();
         instance3.method3();
         instance3.defaultMethod();
+
+        /*
+        method1
+        method2
+        method3
+        ExtendsInterface3.defaultMethod
+
+        method1
+        ExtendsInterface3.defaultMethod
+
+        method2
+        ExtendsInterface3.defaultMethod
+
+        method1
+        method2
+        method3
+        ExtendsInterface3.defaultMethod
+         */
     }
 
     @Test
@@ -156,12 +201,34 @@ public class Main {
 
 
     @Test
-    public void Test5AbstractClass() {
+    public void Test5ClassInheritance() {
 
         DerivedClass instance = new DerivedClass();
         instance.method();
+        instance.method2();
 
         InterfaceClassInheritance instance1 = instance;
         instance1.method();
+        instance.method2();
+
+        DerivedClass2 instance2 = new DerivedClass2();
+        instance2.method();
+        instance2.method2();
+
+        InterfaceClassInheritance instance3 = instance2;
+        instance3.method();
+        instance3.method2();
+
+        /*
+        DerivedClass.method()
+        DerivedClass.method2()
+        DerivedClass.method()
+        DerivedClass.method2()
+
+        DerivedClass.method()
+        DerivedClass2.method2()
+        DerivedClass.method()
+        DerivedClass2.method2()
+         */
     }
 }

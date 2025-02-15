@@ -107,10 +107,10 @@ public class Main {
     }
 
     @Test
-    public void Test3AAnonymousClassWithCtor() {
+    public void Test3WithClassWithCtor() {
 
         // Объявление анонимного (внутреннего) класса
-        var instance = new AnonymousClassWithCtor(5) {
+        var instance = new ConcreteClass(5) {
             public double d = 1.3;
             protected String str = "Anonymous class";
             private int num = 10;
@@ -122,7 +122,41 @@ public class Main {
 
         // Метод не доступен
         System.out.println(instance.d);
-        System.out.println(instance.i);
+        System.out.println(instance.protectedField);
+        System.out.println(instance.str);
+        System.out.println(instance.getPublicField());
+
+        /*
+        1.3
+        5
+        Anonymous class
+        2
+         */
+    }
+
+    @Test
+    public void Test4WithAbstractClass() {
+
+        // Объявление анонимного (внутреннего) класса
+        var instance = new AbstractClass() {
+            public double d = 1.3;
+            protected String str = "Anonymous class";
+            private int num = 10;
+
+            public int getPublicField() {
+                return 2;
+            }
+
+            @Override
+            public int getValue() {
+                //int i = this.privateField;
+                return this.protectedField;
+            }
+        };
+
+        // Метод не доступен
+        System.out.println(instance.d);
+        System.out.println(instance.protectedField);
         System.out.println(instance.str);
         System.out.println(instance.getPublicField());
 

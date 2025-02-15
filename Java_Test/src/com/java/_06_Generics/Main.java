@@ -3,6 +3,7 @@ package com.java._06_Generics;
 import com.java._06_Generics._01_Base.GenericClass;
 import com.java._06_Generics._01_Base.GenericMultyArgumentClass;
 import com.java._06_Generics._02_Method.GenericMethod;
+import com.java._06_Generics._04_Wildcards.NumericFns;
 import org.junit.Test;
 
 public class Main {
@@ -41,5 +42,24 @@ public class Main {
         GenericMethod instance = new GenericMethod();
 
         instance.method("Hello world!");
+    }
+
+    @Test
+    public void Test4Wildcards() {
+        NumericFns<Integer> iOb = new NumericFns<Integer>(6);
+        NumericFns<Double> dOb = new NumericFns<Double>(-6.0);
+        NumericFns<Long> lOb = new NumericFns<Long>(5L);
+
+        System.out.println("Сравнение iOb и dOb.");
+        if (iOb.absEqual(dOb))
+            System.out.println("Абсолютные значения одинаковы .");
+        else
+            System.out.println("Абсолютные значения отличаются.");
+
+        System.out.println("Сравнение iOb и lOb.");
+        if (iOb.absEqual(lOb))
+            System.out.println("Абсолютные значения одинаковы .");
+        else
+            System.out.println("Абсолютные значения отличаются.");
     }
 }

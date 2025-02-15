@@ -5,9 +5,9 @@ package com.java._02_Classes._05_Inheritance;
  */
 public class DerivedClass extends BaseClass {
 
-    public static int a = GetIntStatic("DerivedClass.Static var a");
-    public int b = GetInt("DerivedClass.Var b");
-    public int c = GetIntStatic("DerivedClass StaticMethod c");
+    public static int a = GetIntStatic("DerivedClass. Static var a");
+    public int b = GetInt("DerivedClass. Var b");
+    public int c = GetIntStatic("DerivedClass. Var c with StaticMethod");
 
     public int e;
 
@@ -36,10 +36,10 @@ public class DerivedClass extends BaseClass {
     // пользовательский конструктор.
     // вызывается пользовательский конструктор базового класса, при этом не нужно,
     // присваивать значения, унаследованным членам в конструкторе производного класса.
-    public DerivedClass(int a) {
+    public DerivedClass(int x) {
         //super(e); Только static переменные класса могут быть переданы в конструктор с параметрами,
         //вызывающийся через слово super(//параметр//) или this(//параметр//)
-        super(a);
+        super(x, a/*, b*/);
         System.out.println("DerivedClass.Ctor2");
     }
 

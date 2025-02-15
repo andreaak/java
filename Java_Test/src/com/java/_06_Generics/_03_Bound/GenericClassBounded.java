@@ -14,3 +14,6 @@ class Derived extends Base {
  */
 public class GenericClassBounded<T extends Base> {
 }
+
+class TestClass {
+}

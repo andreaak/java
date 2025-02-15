@@ -10,4 +10,12 @@ public class ConcreteClass implements Interface {
     public int getValue() {
         return protectedField;
     }
+
+    public ConcreteClass() {
+    }
+
+    public ConcreteClass(int i) {
+        this.protectedField = i;
+    }
 }
+

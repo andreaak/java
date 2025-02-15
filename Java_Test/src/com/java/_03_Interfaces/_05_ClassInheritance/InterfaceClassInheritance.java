@@ -5,4 +5,5 @@ package com.java._03_Interfaces._05_ClassInheritance;
  */
 public interface InterfaceClassInheritance {
     void method();
+    void method2();
 }
