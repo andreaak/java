@@ -1,26 +1,22 @@
-package com.java._13_Serialization._01_Base;
+package com.java._13_Serialization._02_Inheritance;
 
 import com.java._13_Serialization._00_Models.Clutch;
 import com.java._13_Serialization._00_Models.Engine;
 
 import java.io.Serializable;
 
-public class Bmw implements Serializable {
-    //private static final long serialVersionUID = 25L;
-
-    public static int testStatic;
-
+public class Bmw extends Car implements Serializable {
     private int price;
     private String model;
     private Clutch clutch;//serializable
     private transient Engine engine;//not serializable
 
-    Bmw(int price, String model, Engine engine, Clutch clutch) {
+    Bmw(int weight, int price, String model, Engine engine, Clutch clutch) {
+        super(weight);
         this.price = price;
         this.model = model;
         this.engine = engine;
         this.clutch = clutch;
-        testStatic = 45;
         System.out.println("Bmw Constructor");
     }
 
@@ -31,7 +27,7 @@ public class Bmw implements Serializable {
                 ", model='" + model + '\'' +
                 ", engine=" + engine +
                 ", clutch=" + clutch +
-                ", testStatic=" + testStatic +
+                ", weight=" + getWeight() +
                 '}';
     }
 
@@ -59,3 +55,4 @@ public class Bmw implements Serializable {
         this.engine = engine;
     }
 }
+

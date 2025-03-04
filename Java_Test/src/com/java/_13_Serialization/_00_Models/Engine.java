@@ -1,10 +1,10 @@
-package com.java._13_Serialization._01_Base;
+package com.java._13_Serialization._00_Models;
 
-class Engine {
+public class Engine {
     private int power;
     private String producer;
 
-    Engine( int power, String producer ) {
+    public Engine( int power, String producer ) {
         this.power = power;
         this.producer = producer;
         System.out.println("Engine Constructor");

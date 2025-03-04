@@ -1,4 +1,4 @@
-package com.java._13_Serialization._02_Externalizable;
+package com.java._13_Serialization._04_Externalizable;
 
 import org.junit.Test;
 

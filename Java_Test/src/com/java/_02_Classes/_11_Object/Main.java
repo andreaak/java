@@ -1,6 +1,7 @@
 package com.java._02_Classes._11_Object;
 
 import org.junit.Test;
+import org.openjdk.jol.info.GraphLayout;
 
 /*
 Object – это базовый класс для всех остальных объектов в Java.
@@ -171,6 +172,33 @@ public class Main {
 
         /*
         Finalize
+        */
+    }
+
+    @Test
+    public void Test6MemoryConsumption() {
+        boolean bool = true;
+        System.out.println(bool);
+        System.out.println(GraphLayout.parseInstance(bool).toPrintable());
+
+        Integer integer = 10;
+        System.out.println(integer);
+        System.out.println(GraphLayout.parseInstance(integer).toPrintable());
+
+        Long longer = 10L;
+        System.out.println(longer);
+        System.out.println(GraphLayout.parseInstance(longer).toPrintable());
+
+        /*
+        10
+        java.lang.Integer@6979e8cbd object externals:
+        ADDRESS       SIZE TYPE              PATH                           VALUE
+        699c2bb90     16   java.lang.Integer                                10
+
+        java.lang.Long@30b8a058d object externals:
+        ADDRESS       SIZE TYPE           PATH                           VALUE
+        699fe4c10     24    java.lang.Long                                10
+
         */
     }
 }
